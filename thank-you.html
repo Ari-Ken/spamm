@@ -1037,6 +1037,34 @@
     <p class="footer-text" style="margin-bottom:20px;">Your information is private. We will never share your data.</p>
     <a href="index.html" class="back-link">← Want to revisit the framework overview? Back to main page</a>
   </footer>
+  <div id="spamm-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999;">
+  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:#0b0f1a; padding:30px; border-radius:12px; max-width:400px; text-align:center; color:#fff;">
+    
+    <p style="font-size:16px; margin-bottom:20px;">
+      Have you downloaded the SPAMM system from your inbox yet?
+    </p>
+    
+    <a href="https://eocampaign1.com/web-version/dummy?p=5deec4c0-3222-11f1-a662-ff4827bf81ee&amp;pt=journey&amp;t=1775841682&amp;s=f5bcdd4a2180b28d32f4a57cfad5d6753e915b1357a5be2e03fa6599b9b01a26" target="_blank" 
+   style="display:inline-block; padding:12px 20px; background:#3b82f6; color:#fff; border-radius:8px; text-decoration:none;">
+  Download Now
+</a>
+
+    <div style="margin-top:15px;">
+      <button onclick="document.getElementById('spamm-popup').style.display='none'" 
+        style="background:none; border:none; color:#aaa; cursor:pointer;">
+        Close
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  setTimeout(function() {
+    document.getElementById('spamm-popup').style.display = 'block';
+  }, 8000); // shows after 8 seconds
+</script>
+
 
 </body>
 </html>
