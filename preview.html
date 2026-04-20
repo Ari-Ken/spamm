@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Revenue Roadmap — SPAMM System</title>
+<meta name="description" content="A 90-day execution plan that turns your LinkedIn attention into an owned revenue asset. Built for the top 1%.">
+<meta property="og:image" content="https://spamm.site/assets/audit-logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:title" content="SPAMM System — Turn LinkedIn Attention Into Owned Revenue">
+<meta property="og:description" content="Free audit reveals why your LinkedIn isn't paying you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B1F3A;
+    --blue: #2F80ED;
+    --cyan: #00D1FF;
+    --white: #FFFFFF;
+    --off: #F8FAFC;
+    --gray: #E2E8F0;
+    --text: #334155;
+    --radius: 20px;
+    --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family:'DM Sans',sans-serif; color:var(--navy); background:var(--off); min-height:100vh; line-height:1.6; }
+  .skip-link { position:absolute; top:-40px; left:0; background:var(--blue); color:white; padding:8px 16px; text-decoration:none; z-index:9999; border-radius: 0 0 8px 0; }
+  .skip-link:focus { top:0; }
+  .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+  @media(min-width:768px) { .container { padding:0 40px; } }
+
+  nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--gray); padding:16px 0; }
+  .nav-inner { display:flex; justify-content:space-between; align-items:center; }
+  .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:var(--navy); text-decoration:none; letter-spacing:-0.5px; }
+  .nav-logo span { color:var(--blue); }
+  .nav-back { color:var(--blue); text-decoration:none; font-size:0.88rem; font-weight:500; }
+  .nav-back:hover { text-decoration:underline; }
+
+  h1,h2,h3 { font-family:'Syne',sans-serif; font-weight:800; letter-spacing:-0.5px; line-height:1.15; }
+
+  /* HERO */
+  .preview-hero {
+    background: linear-gradient(160deg, var(--navy) 0%, #112d52 100%);
+    padding: 80px 0 0;
+    color:white;
+    text-align:center;
+    overflow:hidden;
+    position:relative;
+  }
+  .preview-hero::before {
+    content:''; position:absolute; top:-80px; left:50%; transform:translateX(-50%);
+    width:600px; height:400px;
+    background: radial-gradient(ellipse, rgba(0,209,255,0.12) 0%, transparent 70%);
+  }
+  .preview-hero::after {
+    content:''; position:absolute; bottom:0; left:0; right:0; height:60px;
+    background: var(--off);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .hero-inner { position:relative; z-index:1; max-width:700px; margin:0 auto; padding:0 20px 80px; }
+  .preview-badge {
+    display:inline-block; background:rgba(0,209,255,0.15); border:1px solid rgba(0,209,255,0.3);
+    color:var(--cyan); font-size:0.75rem; font-weight:600; letter-spacing:0.12em;
+    text-transform:uppercase; padding:6px 16px; border-radius:40px; margin-bottom:20px;
+  }
+  .preview-hero h1 { color:white; font-size:clamp(2rem,5vw,3.2rem); margin-bottom:16px; }
+  .preview-hero .sub { color:rgba(255,255,255,0.7); font-size:1.1rem; line-height:1.7; margin-bottom:40px; }
+
+  .price-display {
+    display:inline-flex; align-items:center; gap:12px;
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+    border-radius:16px; padding:16px 28px; margin-bottom:36px;
+  }
+  .price-amount { font-family:'Syne',sans-serif; font-weight:800; font-size:2.4rem; color:white; }
+  .price-label { font-size:0.82rem; color:rgba(255,255,255,0.5); text-align:left; line-height:1.4; }
+
+  /* ROADMAP IMAGE */
+  .roadmap-img-wrap {
+    max-width: 560px; margin: 0 auto 60px;
+    border-radius: var(--radius); overflow:hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+  }
+  .roadmap-img-wrap img {
+    width:100%; height:auto; display:block;
+    background: linear-gradient(135deg, #1a3a6e, #2F80ED);
+    min-height:200px;
+  }
+  .roadmap-placeholder {
+    width:100%; min-height:220px;
+    background:linear-gradient(135deg, #1a3a6e 0%, #2F80ED 50%, #00D1FF 100%);
+    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px;
+  }
+  .roadmap-placeholder .icon { font-size:3rem; }
+  .roadmap-placeholder p { color:rgba(255,255,255,0.7); font-size:0.88rem; }
+
+  /* MAIN CONTENT */
+  main { padding: 60px 0 80px; }
+
+  .content-grid {
+    display:grid; grid-template-columns:1fr; gap:40px;
+    max-width:900px; margin:0 auto;
+  }
+  @media(min-width:768px) { .content-grid { grid-template-columns:1fr 1fr; } }
+
+  .content-card {
+    background:white; border-radius:var(--radius); padding:36px 32px;
+    box-shadow:var(--shadow);
+    animation: fadeUp 0.5s ease both;
+  }
+  @media(max-width:480px) { .content-card { padding:28px 20px; } }
+  .content-card:nth-child(1) { animation-delay:0.1s; }
+  .content-card:nth-child(2) { animation-delay:0.2s; }
+  .content-card.full { grid-column: 1 / -1; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+
+  .card-label { font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--cyan); margin-bottom:10px; }
+  .content-card h2 { font-size:1.25rem; margin-bottom:16px; }
+  .content-card p { color:var(--text); font-size:0.92rem; line-height:1.7; margin-bottom:12px; }
+  .content-card p:last-child { margin-bottom:0; }
+
+  /* WHAT'S INSIDE LIST */
+  .inside-list { list-style:none; }
+  .inside-list li {
+    display:flex; align-items:flex-start; gap:14px;
+    padding:12px 0; border-bottom:1px solid var(--gray); font-size:0.92rem; color:var(--text); line-height:1.5;
+  }
+  .inside-list li:last-child { border-bottom:none; }
+  .inside-list li::before { content:'→'; color:var(--blue); font-weight:700; flex-shrink:0; margin-top:1px; }
+
+  /* FOR / NOT FOR */
+  .fit-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  @media(max-width:520px) { .fit-grid { grid-template-columns:1fr; } }
+
+  .fit-card { border-radius:16px; padding:24px; }
+  .fit-card.yes { background:rgba(0,209,255,0.06); border:1px solid rgba(0,209,255,0.2); }
+  .fit-card.no { background:rgba(239,68,68,0.04); border:1px solid rgba(239,68,68,0.15); }
+  .fit-title { font-family:'Syne',sans-serif; font-weight:700; font-size:0.9rem; margin-bottom:12px; }
+  .fit-title.yes { color:var(--blue); }
+  .fit-title.no { color:#ef4444; }
+  .fit-list { list-style:none; }
+  .fit-list li { font-size:0.84rem; color:var(--text); padding:5px 0; display:flex; align-items:flex-start; gap:8px; line-height:1.5; }
+  .fit-list.yes li::before { content:'✓'; color:var(--blue); font-weight:700; flex-shrink:0; }
+  .fit-list.no li::before { content:'✗'; color:#ef4444; font-weight:700; flex-shrink:0; }
+
+  /* CTA */
+  .cta-section {
+    background:linear-gradient(135deg, var(--navy) 0%, #112d52 100%);
+    border-radius:var(--radius);
+    padding:48px 40px;
+    text-align:center;
+    color:white;
+    max-width:900px;
+    margin:0 auto;
+    grid-column:1/-1;
+    animation: fadeUp 0.5s ease 0.4s both;
+  }
+  @media(max-width:480px) { .cta-section { padding:36px 24px; } }
+  .cta-section h2 { color:white; margin-bottom:14px; font-size:clamp(1.5rem,3vw,2rem); }
+  .cta-section p { color:rgba(255,255,255,0.7); font-size:0.98rem; line-height:1.7; margin-bottom:32px; }
+
+  .btn-primary {
+    display:inline-block; background:var(--blue); color:white;
+    padding:14px 36px; border-radius:40px; text-decoration:none;
+    font-weight:500; font-size:1rem; transition:all 0.25s;
+    box-shadow:0 4px 14px rgba(47,128,237,0.3); border:none; cursor:pointer;
+    font-family:'DM Sans',sans-serif;
+  }
+  .btn-primary:hover { background:#1a56c9; transform:scale(1.02); }
+  .btn-cyan { background:var(--cyan); color:var(--navy); font-weight:700; box-shadow:0 4px 14px rgba(0,209,255,0.3); }
+  .btn-cyan:hover { background:#00b8e0; }
+
+  .cta-note { font-size:0.78rem; color:rgba(255,255,255,0.4); margin-top:16px; }
+
+  /* MODAL */
+  .modal-overlay {
+    position:fixed; inset:0; background:rgba(11,31,58,0.75); backdrop-filter:blur(6px);
+    z-index:1000; display:none; align-items:center; justify-content:center; padding:20px;
+    visibility: hidden;
+  }
+  .modal-overlay.open {
+    display:flex;
+    visibility: visible;
+  }
+  .modal-box {
+    background:white; border-radius:var(--radius); padding:44px 40px;
+    max-width:480px; width:100%; box-shadow:0 30px 80px rgba(0,0,0,0.25);
+    position:relative; animation:modalIn 0.3s ease;
+    text-align:center;
+  }
+  @media(max-width:480px) { .modal-box { padding:36px 24px; } }
+  @keyframes modalIn { from{opacity:0;transform:scale(0.95) translateY(10px);} to{opacity:1;transform:scale(1) translateY(0);} }
+
+  .modal-icon { font-size:3rem; margin-bottom:16px; }
+  .modal-box h2 { font-size:1.4rem; margin-bottom:14px; color:var(--navy); }
+  .modal-box p { font-size:0.92rem; color:var(--text); line-height:1.75; margin-bottom:28px; }
+
+  .modal-close-btn {
+    position:absolute; top:16px; right:16px; background:none; border:none;
+    cursor:pointer; font-size:1.4rem; color:var(--text); line-height:1;
+    padding:4px 8px; border-radius:8px; transition:background 0.2s;
+  }
+  .modal-close-btn:hover { background:var(--off); }
+
+  .modal-dismiss { display:block; margin-top:16px; font-size:0.82rem; color:#94a3b8; cursor:pointer; }
+  .modal-dismiss:hover { color:var(--navy); text-decoration:underline; }
+
+  /* FOOTER */
+  footer { background:var(--navy); color:white; padding:0; overflow:hidden; }
+  .footer-scroll-bar { background:rgba(255,255,255,0.06); padding:14px 0; overflow:hidden; white-space:nowrap; border-bottom:1px solid rgba(255,255,255,0.08); }
+  .footer-scroll-inner { display:inline-flex; gap:0; animation:scrollLeft 20s linear infinite; width:max-content; }
+  @keyframes scrollLeft { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+  .footer-scroll-item { font-size:0.78rem; font-weight:500; letter-spacing:0.08em; color:rgba(255,255,255,0.5); padding:0 28px; }
+  .footer-scroll-item span { color:var(--cyan); margin-left:12px; }
+  .footer-bottom { padding:28px 0; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px; }
+  .footer-links { display:flex; flex-wrap:wrap; gap:24px; }
+  .footer-links a { color:var(--navy); text-decoration:none; font-size:0.85rem; transition:color 0.2s; font-weight:500; }
+  .footer-links a:hover { color:#1a1a1a; }
+  .footer-attr { font-size:0.8rem; color:rgba(255,255,255,0.35); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="audit-home.html" class="nav-logo">SPAMM<span>.</span></a>
+    <a href="audit-success.html" class="nav-back">← Back</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="preview-hero">
+  <div class="hero-inner">
+    <div class="preview-badge">90-Day Execution Plan</div>
+    <h1>The Revenue Roadmap</h1>
+    <p class="sub">A complete system that turns your LinkedIn attention into an owned revenue asset. Not a course on posting better. The architecture behind the results.</p>
+    <div class="price-display">
+      <div class="price-amount">$999</div>
+      <div class="price-label">One payment.<br>Lifetime access to the blueprint.</div>
+    </div>
+  </div>
+</div>
+
+<main id="main-content">
+  <div class="container">
+
+    <div class="roadmap-img-wrap" style="margin-bottom:60px;">
+      <img src="assets/roadmap.png" alt="Revenue Roadmap" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="roadmap-placeholder" style="display:none;">
+        <div class="icon">🗺️</div>
+        <p>The 90-Day Revenue Roadmap</p>
+      </div>
+    </div>
+
+    <div class="content-grid">
+
+      <!-- WHAT THIS IS -->
+      <div class="content-card full">
+        <div class="card-label">What This Is</div>
+        <h2>Not Theory. The Complete System.</h2>
+        <p>This is the same architecture that captures leads, books calls, and builds an email list you control — the exact system behind the results you saw in the Top 1% section.</p>
+        <p>This is not a course about posting better. This is the complete system behind the results.</p>
+      </div>
+
+      <!-- INSIDE THE ROADMAP -->
+      <div class="content-card full">
+        <div class="card-label">What's Inside</div>
+        <h2>The Complete 90-Day Execution System</h2>
+        <ul class="inside-list">
+          <li>The 30-day content-to-capture sequence that builds your list on autopilot</li>
+          <li>The one-page asset blueprint you can build in under a week</li>
+          <li>Automated follow-up scripts that nurture leads without you</li>
+          <li>The exact conversion path from post to booked call</li>
+          <li>2 strategy calls to adapt the system to your specific offer</li>
+          <li>A 90-day timeline with weekly milestones</li>
+        </ul>
+      </div>
+
+      <!-- FOR / NOT FOR -->
+      <div class="content-card full">
+        <div class="card-label">Fit Check</div>
+        <h2>Is This For You?</h2>
+        <div class="fit-grid">
+          <div class="fit-card yes">
+            <div class="fit-title yes">✓ You Are Ready If...</div>
+            <ul class="fit-list yes">
+              <li>You already have attention on LinkedIn but no predictable revenue</li>
+              <li>You're done guessing and ready to build an asset you own</li>
+              <li>Founders, coaches, and consultants with an existing audience</li>
+              <li>Willing to commit to 90 days of focused execution</li>
+            </ul>
+          </div>
+          <div class="fit-card no">
+            <div class="fit-title no">✗ Not For You If...</div>
+            <ul class="fit-list no">
+              <li>You're looking for a viral post formula</li>
+              <li>You won't commit to 90 days of focused execution</li>
+              <li>You prefer renting attention over owning it</li>
+              <li>You haven't started building a presence yet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <h2>Ready to Fix the Leak?</h2>
+        <p>One investment. Lifetime access. The complete system that moves your audience from LinkedIn's rented land to an owned asset that generates revenue without you chasing it.</p>
+        <div class="price-display" style="margin-bottom:28px; border-color:rgba(255,255,255,0.15); background:rgba(255,255,255,0.06);">
+          <div class="price-amount">$999</div>
+          <div class="price-label" style="color:rgba(255,255,255,0.5);">One payment.<br>Lifetime access to the blueprint.</div>
+        </div>
+        <button class="btn-primary btn-cyan" onclick="openModal()" id="get-roadmap-btn">Get the Revenue Roadmap →</button>
+        <p class="cta-note">Available exclusively to those who've received their free leak diagnostic.</p>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; font-size:0.78rem; color:#94a3b8; margin-top:32px; font-style:italic;">This is the execution layer most people never see. The diagnostic showed you the leak. This seals it.</p>
+
+  </div>
+</main>
+
+<!-- LOCKED MODAL -->
+<div class="modal-overlay" id="locked-modal" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+  <div class="modal-box">
+    <button class="modal-close-btn" onclick="closeModal()" aria-label="Close modal">×</button>
+    <div class="modal-icon">🔒</div>
+    <h2 id="modal-headline">This Roadmap Is Locked for Now</h2>
+    <p>The Revenue Roadmap is only available to those who have received their free leak diagnostic. Check your inbox for the report — inside the email you'll find a direct link to claim the roadmap.<br><br>If you haven't received it within 48 hours, send me a quick message on LinkedIn and I'll make sure it reaches you.</p>
+    <a href="https://www.linkedin.com/in/kennetharinze" target="_blank" rel="noopener" class="btn-primary" style="width:100%; text-align:center; display:block; margin-bottom:12px;">Message Kenneth on LinkedIn →</a>
+    <a href="audit.html" class="btn-primary btn-cyan" style="width:100%; text-align:center; display:block; margin-bottom:12px;">Take the Free Leak Diagnostic →</a>
+    <span class="modal-dismiss" onclick="closeModal()">I'll wait for the email</span>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-scroll-bar">
+    <div class="footer-scroll-inner">
+      <span class="footer-scroll-item">For Founders <span>·</span></span>
+      <span class="footer-scroll-item">For Consultants <span>·</span></span>
+      <span class="footer-scroll-item">For Coaches <span>·</span></span>
+      <span class="footer-scroll-item">For B2B Operators <span>·</span></span>
+      <span class="footer-scroll-item">For Service Professionals <span>·</span></span>
+      <span class="footer-scroll-item">For Founders <span>·</span></span>
+      <span class="footer-scroll-item">For Consultants <span>·</span></span>
+      <span class="footer-scroll-item">For Coaches <span>·</span></span>
+      <span class="footer-scroll-item">For B2B Operators <span>·</span></span>
+      <span class="footer-scroll-item">For Service Professionals <span>·</span></span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <nav class="footer-links">
+      <a href="audit-home.html#hero">About</a>
+      <a href="audit.html">Free Audit</a>
+      <a href="audit-home.html#top-1-percent">Top 1%</a>
+      <a href="audit-home.html#faq">FAQ</a>
+    </nav>
+    <div class="footer-attr">SPAMM System — Turn LinkedIn Attention Into Owned Revenue</div>
+  </div>
+</footer>
+
+<script>
+  function openModal() {
+    document.getElementById('locked-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('locked-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('locked-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('locked-modal')) closeModal();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+</body>
+</html>
+

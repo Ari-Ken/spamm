@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Audit — SPAMM System</title>
+<meta name="description" content="Find out exactly why your LinkedIn attention isn't paying you. Free 5-minute audit reveals your revenue leak.">
+<meta property="og:image" content="https://spamm.site/assets/audit-logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:title" content="SPAMM System — Turn LinkedIn Attention Into Owned Revenue">
+<meta property="og:description" content="Free audit reveals why your LinkedIn isn't paying you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B1F3A;
+    --blue: #2F80ED;
+    --cyan: #00D1FF;
+    --white: #FFFFFF;
+    --off: #F8FAFC;
+    --gray: #E2E8F0;
+    --text: #334155;
+    --radius: 20px;
+    --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+    --err: #ef4444;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--navy);
+    background: var(--off);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .skip-link { position:absolute; top:-40px; left:0; background:var(--blue); color:white; padding:8px 16px; text-decoration:none; z-index:9999; border-radius: 0 0 8px 0; }
+  .skip-link:focus { top:0; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  @media(min-width:768px) { .container { padding: 0 40px; } }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray); padding: 16px 0;
+  }
+  .nav-inner { display:flex; justify-content:space-between; align-items:center; }
+  .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:var(--navy); text-decoration:none; letter-spacing:-0.5px; }
+  .nav-logo span { color:var(--blue); }
+  .nav-back { color:var(--blue); text-decoration:none; font-size:0.88rem; font-weight:500; display:flex; align-items:center; gap:6px; }
+  .nav-back:hover { text-decoration:underline; }
+
+  h1,h2,h3 { font-family:'Syne',sans-serif; font-weight:800; letter-spacing:-0.5px; line-height:1.15; }
+
+  /* AUDIT HERO */
+  .audit-hero {
+    background: linear-gradient(160deg, #fff 60%, #f0f7ff 100%);
+    padding: 60px 0 48px;
+    text-align: center;
+  }
+  .audit-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--navy); max-width: 640px; margin: 0 auto 16px; }
+  .audit-hero p { color: var(--text); font-size: 1.05rem; max-width: 520px; margin: 0 auto 32px; line-height: 1.7; }
+  .audit-benefits { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+  .audit-benefit {
+    background: rgba(47,128,237,0.08); border: 1px solid rgba(47,128,237,0.2);
+    border-radius:40px; padding:6px 14px; font-size:0.82rem; color:var(--navy);
+    display:flex; align-items:center; gap:8px;
+  }
+  .audit-benefit::before { content:'✓'; color:var(--blue); font-weight:700; }
+
+  /* FORM CARD */
+  .form-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  /* PROGRESS */
+  .progress-bar-wrap { margin-bottom: 36px; }
+  .progress-steps { display:flex; justify-content:space-between; margin-bottom:10px; }
+  .progress-step { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; }
+  .progress-dot {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--gray); border: 2px solid var(--gray);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Syne',sans-serif; font-weight:700; font-size:0.82rem; color:#94a3b8;
+    transition: all 0.3s; position:relative; z-index:1;
+  }
+  .progress-dot.active { background: var(--blue); border-color: var(--blue); color:white; }
+  .progress-dot.done { background: var(--cyan); border-color: var(--cyan); color: var(--navy); }
+  .progress-dot.done::after { content: '✓'; }
+  .progress-label { font-size:0.7rem; color: #94a3b8; font-weight:500; text-align:center; white-space:nowrap; }
+  .progress-label.active { color: var(--blue); font-weight:600; }
+  .progress-track { height:3px; background:var(--gray); border-radius:4px; overflow:hidden; margin-top:4px; }
+  .progress-fill { height:100%; background: linear-gradient(90deg, var(--blue), var(--cyan)); border-radius:4px; transition: width 0.4s ease; width:0%; }
+
+  /* FORM */
+  .form-card {
+    background:white; border-radius:var(--radius); padding:36px 32px;
+    box-shadow: var(--shadow);
+  }
+  @media(max-width:480px) { .form-card { padding:28px 20px; } }
+
+  .step { display:none; }
+  .step.active { display:block; animation: stepIn 0.35s ease; }
+  @keyframes stepIn { from { opacity:0; transform:translateX(10px); } to { opacity:1; transform:translateX(0); } }
+
+  .step-heading {
+    font-family:'Syne',sans-serif; font-weight:700; font-size:1.15rem;
+    color:var(--navy); margin-bottom:6px;
+  }
+  .step-sub { font-size:0.88rem; color:var(--text); margin-bottom:28px; line-height:1.6; }
+
+  .field-group { margin-bottom: 20px; }
+  label { display:block; font-size:0.85rem; font-weight:500; color:var(--navy); margin-bottom:6px; }
+  input[type=text], input[type=url], input[type=email], select {
+    width:100%; padding:12px 16px; border:1.5px solid var(--gray); border-radius:12px;
+    font-family:'DM Sans',sans-serif; font-size:0.95rem; color:var(--navy);
+    background:white; transition: border-color 0.2s, box-shadow 0.2s;
+    appearance:none; -webkit-appearance:none;
+    min-height: 44px;
+  }
+  input[type=text]:focus, input[type=url]:focus, input[type=email]:focus, select:focus {
+    outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(47,128,237,0.1);
+  }
+  input.error, select.error { border-color: var(--err); }
+  .error-msg { color:var(--err); font-size:0.78rem; margin-top:4px; display:none; }
+  .error-msg.show { display:block; }
+
+  .select-wrap { position:relative; }
+  .select-wrap::after {
+    content:'▾'; position:absolute; right:14px; top:50%; transform:translateY(-50%);
+    color:#94a3b8; pointer-events:none; font-size:0.9rem;
+  }
+
+  .helper-text { font-size:0.78rem; color:#94a3b8; margin-top:6px; }
+  .helper-link { color:var(--blue); }
+
+  /* RADIO */
+  .radio-group { display:flex; flex-direction:column; gap:10px; }
+  .radio-option {
+    display:flex; align-items:center; gap:12px;
+    padding:14px 16px; border:1.5px solid var(--gray); border-radius:12px;
+    cursor:pointer; transition: all 0.2s;
+    min-height: 44px;
+  }
+  .radio-option:hover { border-color:var(--blue); background: rgba(47,128,237,0.03); }
+  .radio-option input[type=radio] { display:none; }
+  .radio-dot {
+    width:18px; height:18px; border-radius:50%; border:2px solid var(--gray);
+    flex-shrink:0; transition: all 0.2s; position:relative;
+  }
+  .radio-option.selected { border-color:var(--blue); background: rgba(47,128,237,0.05); }
+  .radio-option.selected .radio-dot { border-color:var(--blue); background:var(--blue); }
+  .radio-option.selected .radio-dot::after {
+    content:''; position:absolute; inset:3px; border-radius:50%; background:white;
+  }
+  .radio-label { font-size:0.92rem; color:var(--navy); }
+
+  /* YES/NO TOGGLE */
+  .toggle-group { display:flex; gap:12px; }
+  .toggle-btn {
+    flex:1; padding:12px; border:1.5px solid var(--gray); border-radius:12px;
+    background:white; cursor:pointer; font-family:'DM Sans',sans-serif;
+    font-size:0.92rem; color:var(--text); transition:all 0.2s; min-height:44px;
+  }
+  .toggle-btn.selected { border-color:var(--blue); background:rgba(47,128,237,0.06); color:var(--blue); font-weight:500; }
+
+  /* BUTTONS */
+  .btn-primary {
+    display:inline-block; background:var(--blue); color:white;
+    padding:14px 32px; border-radius:40px; text-decoration:none;
+    font-weight:500; font-size:1rem; transition:all 0.25s;
+    box-shadow:0 4px 14px rgba(47,128,237,0.3); border:none; cursor:pointer;
+    font-family:'DM Sans',sans-serif;
+  }
+  .btn-primary:hover { background:#1a56c9; transform:scale(1.02); }
+
+  .btn-ghost {
+    background:none; border:1.5px solid var(--gray); color:var(--text);
+    padding:13px 28px; border-radius:40px; font-family:'DM Sans',sans-serif;
+    font-size:0.95rem; cursor:pointer; transition:all 0.2s;
+  }
+  .btn-ghost:hover { border-color:var(--navy); color:var(--navy); }
+
+  .step-actions { display:flex; gap:12px; margin-top:32px; flex-wrap:wrap; }
+  .step-actions .btn-primary { flex:1; text-align:center; }
+  .trust-note { font-size:0.78rem; color:#94a3b8; text-align:center; margin-top:16px; }
+
+  /* FOOTER */
+  footer { background:var(--navy); color:white; padding:0; overflow:hidden; }
+  .footer-scroll-bar { background:rgba(255,255,255,0.06); padding:14px 0; overflow:hidden; white-space:nowrap; border-bottom:1px solid rgba(255,255,255,0.08); }
+  .footer-scroll-inner { display:inline-flex; gap:0; animation:scrollLeft 20s linear infinite; width:max-content; }
+  @keyframes scrollLeft { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+  .footer-scroll-item { font-size:0.78rem; font-weight:500; letter-spacing:0.08em; color:rgba(255,255,255,0.5); padding:0 28px; }
+  .footer-scroll-item span { color:var(--cyan); margin-left:12px; }
+  .footer-bottom { padding:28px 0; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px; }
+  .footer-links { display:flex; flex-wrap:wrap; gap:24px; }
+  .footer-links a { color:var(--navy); text-decoration:none; font-size:0.85rem; transition:color 0.2s; font-weight:500; }
+  .footer-links a:hover { color:#1a1a1a; }
+  .footer-attr { font-size:0.8rem; color:rgba(255,255,255,0.35); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="audit-home.html" class="nav-logo">SPAMM<span>.</span></a>
+    <a href="audit-home.html" class="nav-back">← Back to Home</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<div class="audit-hero">
+  <div class="container">
+    <div class="section-label" style="color:var(--blue); font-family:'Syne',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:12px;">Free Revenue Leak Diagnostic</div>
+    <h1>Find Out Exactly Why Your LinkedIn Attention Isn't Paying You</h1>
+    <p>Most founders and coaches are one missing piece away from predictable revenue. This free 5-minute audit reveals that piece and gives you a clear path to fix it.</p>
+    <div class="audit-benefits">
+      <span class="audit-benefit">Personalized leak diagnostic sent to your inbox</span>
+      <span class="audit-benefit">Revenue Readiness Score (out of 100)</span>
+      <span class="audit-benefit">90-day roadmap preview</span>
+    </div>
+  </div>
+</div>
+
+<div class="form-wrap">
+
+  <!-- PROGRESS -->
+  <div class="progress-bar-wrap">
+    <div class="progress-steps">
+      <div class="progress-step">
+        <div class="progress-dot active" id="dot-1">1</div>
+        <div class="progress-label active" id="label-1">About You</div>
+      </div>
+      <div class="progress-step">
+        <div class="progress-dot" id="dot-2">2</div>
+        <div class="progress-label" id="label-2">Your Activity</div>
+      </div>
+      <div class="progress-step">
+        <div class="progress-dot" id="dot-3">3</div>
+        <div class="progress-label" id="label-3">Your Destination</div>
+      </div>
+      <div class="progress-step">
+        <div class="progress-dot" id="dot-4">4</div>
+        <div class="progress-label" id="label-4">Readiness</div>
+      </div>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <form name="linkedin-audit" id="audit-form" method="POST" data-netlify="true" action="audit-success.html">
+      <input type="hidden" name="form-name" value="linkedin-audit">
+
+      <!-- STEP 1 -->
+      <div class="step active" id="step-1">
+        <div class="step-heading">First, tell us where to send your diagnostic.</div>
+        <div class="step-sub">Time: 5 minutes · 4 short sections</div>
+
+        <div class="field-group">
+          <label for="full-name">Full Name *</label>
+          <input type="text" id="full-name" name="full-name" placeholder="e.g. Sarah Johnson" required autocomplete="name">
+          <div class="error-msg" id="err-name">Please enter your full name.</div>
+        </div>
+
+        <div class="field-group">
+          <label for="linkedin-url">LinkedIn Profile URL *</label>
+          <input type="url" id="linkedin-url" name="linkedin" placeholder="https://linkedin.com/in/yourhandle" required autocomplete="url">
+          <div class="error-msg" id="err-linkedin">Please enter a valid LinkedIn URL.</div>
+        </div>
+
+        <div class="field-group">
+          <label for="tier-interest">Which tier interests you most?</label>
+          <div class="select-wrap">
+            <select id="tier-interest" name="tier-interest">
+              <option value="">Select an option…</option>
+              <option>The Launchpad ($250–$500)</option>
+              <option>The Authority Engine ($650–$1,000)</option>
+              <option>The Autonomous System ($1,500–$3,000)</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="helper-text"><a href="audit-home.html#tiers" class="helper-link" target="_blank">Learn more about these →</a></div>
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn-primary" onclick="nextStep(1)">Next: Your Activity →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step" id="step-2">
+        <div class="step-heading">Now, how are you showing up on LinkedIn?</div>
+        <div class="step-sub">Help us understand your current activity level so we can map your exact gap.</div>
+
+        <div class="field-group">
+          <label for="post-frequency">How many times do you post per week?</label>
+          <div class="select-wrap">
+            <select id="post-frequency" name="post-frequency">
+              <option value="">Select…</option>
+              <option>Less than 1</option>
+              <option>1–2</option>
+              <option>3–4</option>
+              <option>5+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="niche">What is your primary niche or audience?</label>
+          <input type="text" id="niche" name="niche" placeholder="e.g. B2B SaaS founders, executive coaches…">
+        </div>
+
+        <div class="field-group">
+          <label for="comments-daily">How many meaningful comments do you leave on others' posts daily?</label>
+          <div class="select-wrap">
+            <select id="comments-daily" name="comments-daily">
+              <option value="">Select…</option>
+              <option>0–2</option>
+              <option>3–5</option>
+              <option>6–10</option>
+              <option>10+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn-ghost" onclick="prevStep(2)">← Back</button>
+          <button type="button" class="btn-primary" onclick="nextStep(2)">Next: Your Destination →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step" id="step-3">
+        <div class="step-heading">Where does your LinkedIn traffic actually go?</div>
+        <div class="step-sub">This is where most founders discover their biggest revenue leak.</div>
+
+        <div class="field-group">
+          <label>Do you currently send LinkedIn visitors to a page you own?</label>
+          <div class="toggle-group">
+            <button type="button" class="toggle-btn" id="owns-yes" onclick="selectToggle('owns-page', 'Yes', 'owns-yes', 'owns-no')">Yes</button>
+            <button type="button" class="toggle-btn" id="owns-no" onclick="selectToggle('owns-page', 'No', 'owns-yes', 'owns-no')">No</button>
+          </div>
+          <input type="hidden" name="owns-page" id="owns-page-input">
+        </div>
+
+        <div class="field-group" id="page-action-wrap">
+          <label for="page-action">If yes, what is the main action on that page?</label>
+          <div class="select-wrap">
+            <select id="page-action" name="page-action">
+              <option value="">Select…</option>
+              <option>Email signup</option>
+              <option>Book a call</option>
+              <option>Learn more about you</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>Do you use any automation in your follow-up process?</label>
+          <div class="toggle-group">
+            <button type="button" class="toggle-btn" id="auto-yes" onclick="selectToggle('uses-automation', 'Yes', 'auto-yes', 'auto-no', 'auto-notsure')">Yes</button>
+            <button type="button" class="toggle-btn" id="auto-no" onclick="selectToggle('uses-automation', 'No', 'auto-yes', 'auto-no', 'auto-notsure')">No</button>
+            <button type="button" class="toggle-btn" id="auto-notsure" onclick="selectToggle('uses-automation', 'Not sure', 'auto-yes', 'auto-no', 'auto-notsure')">Not sure</button>
+          </div>
+          <input type="hidden" name="uses-automation" id="uses-automation-input">
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn-ghost" onclick="prevStep(3)">← Back</button>
+          <button type="button" class="btn-primary" onclick="nextStep(3)">Next: Final Step →</button>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step" id="step-4">
+        <div class="step-heading">Last step. Where should we send your diagnostic?</div>
+        <div class="step-sub">Choose the email you'd like to receive the report.</div>
+
+        <div class="field-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email">
+          <div class="error-msg" id="err-email">Please enter a valid email address.</div>
+        </div>
+
+        <div class="field-group">
+          <label>Can you commit to a 90-day sprint to turn your LinkedIn presence into a revenue asset?</label>
+          <div class="radio-group">
+            <label class="radio-option" id="radio-ready" onclick="selectRadio('readiness', 'ready', 'radio-ready', 'radio-exploring')">
+              <input type="radio" name="readiness" value="ready">
+              <div class="radio-dot"></div>
+              <span class="radio-label">Yes, I'm ready to build.</span>
+            </label>
+            <label class="radio-option" id="radio-exploring" onclick="selectRadio('readiness', 'exploring', 'radio-ready', 'radio-exploring')">
+              <input type="radio" name="readiness" value="exploring">
+              <div class="radio-dot"></div>
+              <span class="radio-label">I'm just exploring for now.</span>
+            </label>
+          </div>
+          <div class="helper-text" style="margin-top:10px;">This helps tailor your diagnostic. Both answers receive the free report.</div>
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn-ghost" onclick="prevStep(4)">← Back</button>
+          <button type="submit" class="btn-primary">Send My Free Leak Diagnostic →</button>
+        </div>
+        <p class="trust-note">No spam. No pitch without value. Just a clear diagnosis.</p>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-scroll-bar">
+    <div class="footer-scroll-inner">
+      <span class="footer-scroll-item">For Founders <span>·</span></span>
+      <span class="footer-scroll-item">For Consultants <span>·</span></span>
+      <span class="footer-scroll-item">For Coaches <span>·</span></span>
+      <span class="footer-scroll-item">For B2B Operators <span>·</span></span>
+      <span class="footer-scroll-item">For Service Professionals <span>·</span></span>
+      <span class="footer-scroll-item">For Founders <span>·</span></span>
+      <span class="footer-scroll-item">For Consultants <span>·</span></span>
+      <span class="footer-scroll-item">For Coaches <span>·</span></span>
+      <span class="footer-scroll-item">For B2B Operators <span>·</span></span>
+      <span class="footer-scroll-item">For Service Professionals <span>·</span></span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <nav class="footer-links">
+      <a href="audit-home.html#hero">About</a>
+      <a href="audit.html">Free Audit</a>
+      <a href="audit-home.html#top-1-percent">Top 1%</a>
+      <a href="audit-home.html#faq">FAQ</a>
+    </nav>
+    <div class="footer-attr">SPAMM System — Turn LinkedIn Attention Into Owned Revenue</div>
+  </div>
+</footer>
+
+<script>
+  let currentStep = 1;
+  const totalSteps = 4;
+  const hiddenValues = {};
+
+  function updateProgress(step) {
+    const pct = ((step - 1) / (totalSteps - 1)) * 100;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    for (let i = 1; i <= totalSteps; i++) {
+      const dot = document.getElementById('dot-' + i);
+      const label = document.getElementById('label-' + i);
+      dot.className = 'progress-dot';
+      label.className = 'progress-label';
+      if (i < step) { dot.textContent = ''; dot.classList.add('done'); }
+      else if (i === step) { dot.textContent = i; dot.classList.add('active'); label.classList.add('active'); }
+      else { dot.textContent = i; }
+    }
+  }
+
+  function showStep(step) {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step-' + step).classList.add('active');
+    updateProgress(step);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(step) {
+    let valid = true;
+    if (step === 1) {
+      const name = document.getElementById('full-name');
+      const linkedin = document.getElementById('linkedin-url');
+      const errName = document.getElementById('err-name');
+      const errLinkedIn = document.getElementById('err-linkedin');
+      if (!name.value.trim()) { name.classList.add('error'); errName.classList.add('show'); valid = false; }
+      else { name.classList.remove('error'); errName.classList.remove('show'); }
+      if (!linkedin.value.trim() || !linkedin.value.includes('linkedin')) { linkedin.classList.add('error'); errLinkedIn.classList.add('show'); valid = false; }
+      else { linkedin.classList.remove('error'); errLinkedIn.classList.remove('show'); }
+    }
+    if (step === 4) {
+      const email = document.getElementById('email');
+      const errEmail = document.getElementById('err-email');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value)) { email.classList.add('error'); errEmail.classList.add('show'); valid = false; }
+      else { email.classList.remove('error'); errEmail.classList.remove('show'); }
+    }
+    return valid;
+  }
+
+  function nextStep(from) {
+    if (!validateStep(from)) return;
+    currentStep = from + 1;
+    showStep(currentStep);
+  }
+
+  function prevStep(from) {
+    currentStep = from - 1;
+    showStep(currentStep);
+  }
+
+  function selectToggle(fieldName, value, ...btnIds) {
+    btnIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('selected');
+    });
+    const activeId = btnIds.find(id => {
+      const el = document.getElementById(id);
+      return el && el.textContent.trim() === value;
+    });
+    if (activeId) document.getElementById(activeId).classList.add('selected');
+    const input = document.getElementById(fieldName + '-input');
+    if (input) input.value = value;
+  }
+
+  function selectRadio(name, value, ...radioIds) {
+    radioIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('selected');
+    });
+    const activeId = radioIds.find(id => {
+      const el = document.getElementById(id);
+      return el && el.querySelector('input[type=radio]').value === value;
+    });
+    if (activeId) {
+      document.getElementById(activeId).classList.add('selected');
+      document.getElementById(activeId).querySelector('input[type=radio]').checked = true;
+    }
+  }
+
+  // ENTER key navigation
+  document.getElementById('audit-form').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA' && e.target.type !== 'submit') {
+      e.preventDefault();
+      const activeStep = document.querySelector('.step.active');
+      const nextBtn = activeStep.querySelector('[onclick^="nextStep"]');
+      if (nextBtn) nextBtn.click();
+    }
+  });
+
+  updateProgress(1);
+</script>
+</body>
+</html>
+

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The SPAMM System — Turn LinkedIn Attention Into Owned Leads</title>
+  <title>SPAMM � Turn LinkedIn Attention Into Owned Leads</title>
   <meta name="description" content="Get the free SPAMM Framework. A 5-part system that turns your LinkedIn audience into owned leads and booked calls.">
-  <meta property="og:title" content="The SPAMM System — Turn LinkedIn Attention Into Owned Leads">
+  <meta property="og:title" content="SPAMM � Turn LinkedIn Attention Into Owned Leads">
   <meta property="og:description" content="Get the free SPAMM Framework. A 5-part system that turns your LinkedIn audience into owned leads and booked calls.">
   <meta property="og:image" content="spamm-logo.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The SPAMM System — Turn LinkedIn Attention Into Owned Leads">
+  <meta name="twitter:title" content="SPAMM � Turn LinkedIn Attention Into Owned Leads">
   <meta name="twitter:description" content="Get the free SPAMM Framework. A 5-part system that turns your LinkedIn audience into owned leads and booked calls.">
   <meta name="twitter:image" content="spamm-logo.png">
   <link rel="image_src" href="spamm-logo.png">
@@ -20,1097 +20,305 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 
   <style>
-  /* ═══════════ TOKENS ═══════════ */
-  :root {
-    --navy:   #0B1F3A;
-    --blue:   #2F80ED;
-    --cyan:   #00D1FF;
-    --dark:   #06090E;
-    --mid:    #0A1628;
-    --card:   #0D1E35;
-    --white:  #FFFFFF;
-    --gray:   #7A8FA8;
-    --border: rgba(47,128,237,0.18);
-    --red:    #FF6B6B;
-    --green:  #0A7F6D;
-    /* New light theme variables */
-    --bg-primary: #FFFFFF;
-    --text-primary: #1A1A1A;
-    --text-secondary: #4C4C4C;
-    --text-muted: #8A8A8A;
-    --section-bg: #F8F9FA;
-    --card-bg: #FFFFFF;
-    --border-light: #E5E7EB;
-  }
+    /* ----------- RESET & BASE ----------- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-  /* ═══════════ RESET ═══════════ */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.75;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
-  img { display: block; max-width: 100%; }
-  a { text-decoration: none; }
-  strong { font-weight: 600; }
-  p { max-width: 640px; }
-
-  /* ═══════════ LAYOUT ═══════════ */
-  .wrap       { max-width: 1060px; margin: 0 auto; padding: 0 28px; }
-  .wrap--slim { max-width: 720px;  margin: 0 auto; padding: 0 28px; }
-
-  /* ═══════════ REVEAL ANIMATIONS ═══════════ */
-  .reveal {
-    opacity: 0;
-    transform: translateY(36px);
-    transition: opacity 0.75s ease, transform 0.75s ease;
-  }
-  .reveal.from-left  { transform: translateX(-44px); }
-  .reveal.from-right { transform: translateX(44px); }
-  .reveal.scale-up   { transform: scale(0.96); }
-  .reveal.visible {
-    opacity: 1;
-    transform: none;
-  }
-  .d1 { transition-delay: 0.10s; }
-  .d2 { transition-delay: 0.20s; }
-  .d3 { transition-delay: 0.30s; }
-  .d4 { transition-delay: 0.40s; }
-  .d5 { transition-delay: 0.50s; }
-
-  /* Sliding section animations */
-  .slide-in-left {
-    opacity: 0;
-    transform: translateX(-60px);
-    animation: slideInLeft 0.8s ease-out forwards;
-  }
-
-  .slide-in-right {
-    opacity: 0;
-    transform: translateX(60px);
-    animation: slideInRight 0.8s ease-out forwards;
-  }
-
-  @keyframes slideInLeft {
-    to {
-      opacity: 1;
-      transform: translateX(0);
+    :root {
+      --navy: #0B1F3A;
+      --blue: #2F80ED;
+      --cyan: #00D1FF;
+      --dark: #06090E;
+      --white: #FFFFFF;
+      --gray: #8A9BB0;
+      --text-primary: #FFFFFF;
+      --text-secondary: #B8C5D1;
+      --text-muted: #7A8FA8;
+      --accent: #00D1FF;
+      --border: rgba(0,209,255,0.2);
+      --card-bg: rgba(255,255,255,0.05);
+      --highlight-bg: rgba(0,209,255,0.1);
     }
-  }
 
-  @keyframes slideInRight {
-    to {
-      opacity: 1;
-      transform: translateX(0);
+    body {
+      background: linear-gradient(135deg, #0B1F3A 0%, #0D2D56 50%, #0B1F3A 100%);
+      color: var(--text-primary);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
     }
-  }
 
-  @media (max-width: 768px) {
-    .reveal { transform: translateY(20px); transition-duration: 0.55s; }
-    .reveal.from-left,
-    .reveal.from-right { transform: translateY(20px); }
-    .slide-in-left,
-    .slide-in-right {
-      transform: translateY(30px);
-      animation: slideInUp 0.8s ease-out forwards;
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(47,128,237,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0,209,255,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(47,128,237,0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
     }
-  }
 
-  @keyframes slideInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    /* ----------- UTILITIES ----------- */
+    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    /* ----------- NAV ----------- */
+    nav {
+      padding: 24px 24px 0;
+      text-align: center;
+      margin-bottom: 40px;
     }
-  }
 
-  /* ═══════════ SECTIONS ═══════════ */
-  .sec { padding: 120px 28px; position: relative; margin-bottom: 80px; }
-  .sec--dark,
-  .sec--navy,
-  .sec--mid,
-  .sec--light {
-    background: var(--section-bg);
-    border-bottom: 1px solid var(--border-light);
-    color: var(--text-primary);
-  }
-  .sec--light { background: var(--bg-primary); }
-  .sec--premium {
-    background: var(--bg-primary);
-    position: relative;
-    overflow: hidden;
-  }
-  .sec--dark .display,
-  .sec--navy .display,
-  .sec--mid .display,
-  .sec--light .display {
-    color: var(--text-primary);
-  }
-  .sec--dark p,
-  .sec--navy p,
-  .sec--mid p,
-  .sec--light p,
-  .sec--dark li,
-  .sec--navy li,
-  .sec--mid li,
-  .sec--light li,
-  .sec--dark .body,
-  .sec--navy .body,
-  .sec--mid .body,
-  .sec--light .body {
-    color: var(--text-secondary);
-  }
-  .sec--dark h3,
-  .sec--navy h3,
-  .sec--mid h3,
-  .sec--light h3 {
-    color: var(--text-primary);
-  }
-  .sec--premium::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--blue), var(--cyan), var(--green));
-    animation: shimmer 3s ease-in-out infinite;
-  }
-  .gap { height: 1px; background: var(--border-light); }
-  .breath { height: 52px; }
-  .breath-sm { height: 28px; }
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
 
-  @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
+    .nav-logo img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
 
-  /* ═══════════ TYPE ═══════════ */
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Syne', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 20px;
-  }
-  .eyebrow::after { content: ''; width: 26px; height: 1px; background: var(--blue); opacity: 0.45; }
+    .nav-logo-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      color: var(--white);
+      letter-spacing: 2px;
+    }
 
-  .display {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    line-height: 1.08;
-    color: var(--white);
-  }
-  .display--light { color: var(--text-primary); }
-  .d-xl  { font-size: clamp(36px, 5.8vw, 64px); }
-  .d-lg  { font-size: clamp(28px, 4.2vw, 50px); }
-  .d-md  { font-size: clamp(22px, 3vw, 36px); }
-  .d-dark { color: var(--text-primary); }
-  .hl  { color: var(--cyan); }
-  .hbl { color: var(--blue); }
+    /* ----------- MAIN CONTENT ----------- */
+    main {
+      padding: 60px 24px 120px;
+      text-align: center;
+    }
 
-  .body { font-size: 16px; color: var(--text-secondary); line-height: 1.85; max-width: 600px; }
-  .body--light { color: var(--text-primary); }
-  .body--wide  { max-width: 760px; }
-  .center { text-align: center; }
+    /* ----------- TYPOGRAPHY ----------- */
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(56px, 10vw, 80px);
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 24px;
+      letter-spacing: 3px;
+      line-height: 1;
+    }
 
-  /* ═══════════ BADGE ═══════════ */
-  .badge {
-    display: inline-block;
-    font-family: 'Syne', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    padding: 7px 18px;
-    border-radius: 2px;
-  }
-  .badge--blue { background: rgba(47,128,237,0.11); border: 1px solid rgba(47,128,237,0.26); color: var(--blue); }
-  .badge--cyan { background: rgba(0,209,255,0.09);  border: 1px solid rgba(0,209,255,0.24);  color: var(--cyan); }
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 5vw, 36px);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
 
-  /* ═══════════ BUTTONS ═══════════ */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    border-radius: 3px;
-    cursor: pointer;
-    border: none;
-    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-  }
-  .btn:hover { transform: translateY(-2px); }
-  .btn--primary {
-    background: var(--blue);
-    color: #fff;
-    padding: 16px 36px;
-    box-shadow: 0 8px 26px rgba(47,128,237,0.28);
-  }
-  .btn--primary:hover {
-    background: #1a6fd4;
-    box-shadow: 0 14px 36px rgba(47,128,237,0.42);
-  }
-  .btn--lg { padding: 20px 50px; font-size: 15px; letter-spacing: 2px; }
+    p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-  /* ═══════════ NAV ═══════════ */
-  #nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 200;
-    padding: 18px 28px;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-light);
-    transition: padding 0.35s ease, background 0.35s ease, border-color 0.35s ease;
-  }
-  #nav.scrolled {
-    padding: 12px 28px;
-    background: rgba(255,255,255,0.98);
-    border-color: var(--border-light);
-  }
-  .nav-inner {
-    max-width: 1060px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .nav-logo { display: flex; align-items: center; gap: 10px; }
-  .nav-logo img { width: 28px; height: 28px; object-fit: contain; }
-  .nav-logo-text {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 3px;
-    color: var(--text-primary);
-  }
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .nav-link {
-    font-family: 'Syne', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--text-secondary);
-    padding: 6px 12px;
-    border-radius: 2px;
-    transition: color 0.2s;
-  }
-  .nav-link:hover { color: var(--text-primary); }
-  @media (max-width: 700px) { .nav-links .nav-link { display: none; } }
+    /* ----------- HIGHLIGHT BOXES ----------- */
+    .highlight-box {
+      background: var(--highlight-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 32px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
 
-  /* ═══════════ HERO ═══════════ */
-  #hero {
-    min-height: 100vh;
-    padding: 148px 28px 108px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  #hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 72% 62% at 68% 36%, rgba(47,128,237,0.10) 0%, transparent 60%),
-      radial-gradient(ellipse 44% 44% at 10% 84%, rgba(0,209,255,0.055) 0%, transparent 55%);
-    pointer-events: none;
-  }
-  #hero::after {
-    content: '';
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(47,128,237,0.032) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(47,128,237,0.032) 1px, transparent 1px);
-    background-size: 58px 58px;
-    pointer-events: none;
-  }
-  .hero-grid {
-    position: relative; z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: 72px;
-    align-items: center;
-    max-width: 1060px;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .hero-h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(36px, 5.4vw, 62px);
-    font-weight: 800;
-    line-height: 1.07;
-    color: var(--text-primary);
-    margin-bottom: 22px;
-  }
-  .hero-h1 .accent-line { display: block; color: var(--cyan); }
-  .hero-sub {
-    font-size: 18px;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    max-width: 510px;
-    margin-bottom: 10px;
-  }
-  .hero-nudge {
-    font-size: 14px;
-    color: #0891B2;
-    font-style: italic;
-    margin-bottom: 42px;
-  }
-  .hero-form-box {
-    background: rgba(47,128,237,0.055);
-    border: 1px solid rgba(47,128,237,0.19);
-    border-radius: 8px;
-    padding: 26px 26px 20px;
-    margin-bottom: 16px;
-  }
-  .form-eyebrow {
-    display: block;
-    font-family: 'Syne', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 14px;
-  }
-  .hero-trust {
-    font-size: 13px;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
+    .highlight-box p {
+      font-size: 20px;
+      color: var(--white);
+      font-weight: 500;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
 
-  /* Author card */
-  .author-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    color: #fff;
-  }
-  .author-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--blue), var(--cyan));
-  }
-  .ac-head { padding: 24px 24px 0; display: flex; align-items: center; gap: 14px; }
-  .ac-photo { width: 66px; height: 66px; border-radius: 50%; object-fit: cover; border: 2px solid var(--blue); flex-shrink: 0; }
-  .ac-name { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px; }
-  .ac-role { font-size: 13px; color: #fff; line-height: 1.4; }
-  .ac-body { padding: 18px 24px 24px; }
-  .ac-quote {
-    font-size: 14px; color: #fff; line-height: 1.75; font-style: italic;
-    border-left: 2px solid var(--cyan); padding-left: 14px; margin-bottom: 18px;
-  }
-  .ac-flyer { width: 100%; border-radius: 5px; border: 1px solid rgba(47,128,237,0.11); }
+    .framework-box {
+      background: var(--card-bg);
+      border: 1px solid rgba(0,209,255,0.15);
+      border-radius: 16px;
+      padding: 40px 32px;
+      margin-bottom: 48px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
 
-  /* ═══════════ PROBLEM ═══════════ */
-  .pain-list {
-    display: grid;
-    gap: 18px;
-    max-width: 720px;
-    margin: 44px 0;
-  }
-  .pain-row {
-    display: flex; align-items: flex-start; gap: 18px;
-    padding: 28px 26px;
-    border: 1px solid var(--border-light);
-    border-radius: 18px;
-    background: var(--card-bg);
-    box-shadow: 0 20px 40px rgba(15,23,42,0.06);
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
-  }
-  .pain-row:hover { transform: translateX(-2px); box-shadow: 0 24px 50px rgba(15,23,42,0.08); }
-  .pain-tick { width: 20px; height: 2px; background: var(--red); margin-top: 14px; flex-shrink: 0; border-radius: 2px; }
-  .pain-row p { font-size: 16px; color: var(--text-primary); line-height: 1.78; max-width: none; margin: 0; }
-  .prob-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 56px; }
-  .prob-card {
-    background: rgba(255,107,107,0.04); border: 1px solid rgba(255,107,107,0.13);
-    border-radius: 8px; padding: 30px 24px;
-    transition: transform 0.24s ease, box-shadow 0.24s ease;
-  }
-  .prob-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,0.3); }
-  .prob-icon { font-size: 24px; margin-bottom: 14px; }
-  .prob-card h3 { font-family:'Syne',sans-serif; font-size:14px; font-weight:700; color:#B91C1C; margin-bottom:9px; }
-  .prob-card p { font-size:14px; color:var(--text-secondary); line-height:1.65; max-width:none; }
+    .framework-box p {
+      font-size: 20px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
 
-  /* ═══════════ REFRAME ═══════════ */
-  .reframe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .insight-box {
-    background: rgba(0,209,255,0.055); border: 1px solid rgba(0,209,255,0.16);
-    border-radius: 8px; padding: 34px 30px;
-  }
-  .insight-label {
-    font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700;
-    letter-spacing: 3px; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px;
-  }
-  .insight-box p { font-size: 17px; color: var(--text-primary); line-height: 1.82; max-width: none; }
-  .insight-box p strong { color: var(--cyan); }
-  .flow-strip {
-    display: flex; align-items: center; justify-content: center;
-    flex-wrap: wrap; gap: 0; margin-top: 58px;
-  }
-  .flow-node {
-    background: rgba(47,128,237,0.08); border: 1px solid rgba(47,128,237,0.20);
-    border-radius: 5px; padding: 15px 18px; text-align: center; min-width: 104px;
-    transition: transform 0.22s ease, background 0.22s ease;
-  }
-  .flow-node:hover { transform: translateY(-4px); background: rgba(47,128,237,0.15); }
-  .fn-l { font-family: 'Bebas Neue', sans-serif; font-size: 29px; color: var(--cyan); line-height: 1; }
-  .fn-w { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 700; color: var(--text-primary); letter-spacing: 1px; margin-top: 4px; }
-  .flow-arr { font-size: 19px; color: rgba(47,128,237,0.32); padding: 0 5px; flex-shrink: 0; }
+    /* ----------- CTA SECTION ----------- */
+    .cta-section {
+      margin-bottom: 48px;
+    }
 
-  /* ═══════════ CONTRAST ═══════════ */
-  .contrast-wrap { display: grid; grid-template-columns: 1fr 60px 1fr; align-items: start; margin-top: 52px; }
-  .c-col { border-radius: 8px; padding: 34px 28px; }
-  .c-without { background: rgba(255,107,107,0.04); border: 1px solid rgba(255,107,107,0.13); }
-  .c-with    { background: rgba(0,209,255,0.045); border: 1px solid rgba(0,209,255,0.16); }
-  .c-col h3 {
-    font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
-    letter-spacing: 2px; text-transform: uppercase;
-    margin-bottom: 22px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .c-without h3 { color: #FF9090; }
-  .c-with h3    { color: var(--cyan); }
-  .c-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 13px; font-size: 15px; line-height: 1.6; }
-  .c-row:last-child { margin-bottom: 0; }
-  .c-without .c-row { color: var(--text-secondary); }
-  .c-with    .c-row { color: #2F80ED; }
-  .c-mark { flex-shrink: 0; margin-top: 1px; font-weight: 700; }
-  .c-mid { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; padding-top: 80px; }
-  .c-mid-line { width: 2px; height: 44px; background: linear-gradient(to bottom, var(--blue), var(--cyan)); border-radius: 2px; }
-  .c-mid-arr { font-size: 22px; color: var(--blue); line-height: 1; }
+    .cta-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-  /* ═══════════ SPAMM CARDS ═══════════ */
-  .spamm-cards { display: grid; grid-template-columns: repeat(5,1fr); gap: 11px; margin-top: 50px; }
-  .sp-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
-    transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
-  }
-  .sp-card:hover { transform: translateY(-7px) scale(1.01); box-shadow: 0 22px 44px rgba(0,0,0,0.35); border-color: rgba(47,128,237,0.44); }
-  .sp-head { background: var(--blue); padding: 20px 14px; text-align: center; }
-  .sp-head.alt { background: var(--cyan); }
-  .sp-letter { font-family: 'Bebas Neue', sans-serif; font-size: 50px; color: #fff; line-height: 1; }
-  .sp-head.alt .sp-letter { color: var(--navy); }
-  .sp-body { padding: 16px 14px 20px; }
-  .sp-title { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 7px; line-height: 1.3; }
-  .sp-desc { font-size: 12px; color: #fff; line-height: 1.6; max-width: none; }
+    .form-container {
+      max-width: 420px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,209,255,0.2);
+      border-radius: 12px;
+      padding: 32px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
 
-  /* ═══════════ IMAGINE ═══════════ */
-  .imagine-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 50px; }
-  .im-card {
-    background: rgba(47,128,237,0.05); border: 1px solid rgba(47,128,237,0.13);
-    border-radius: 8px; padding: 30px 24px;
-    transition: transform 0.24s ease, box-shadow 0.24s ease;
-  }
-  .im-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.25); }
-  .im-num { font-family: 'Bebas Neue', sans-serif; font-size: 42px; color: rgba(47,128,237,0.4); line-height: 1; margin-bottom: 12px; }
-  .im-card h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 9px; }
-  .im-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; max-width: none; }
+    .form-note {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 16px;
+      font-style: italic;
+    }
 
-  /* ═══════════ VALUE ═══════════ */
-  .val-list { display: flex; flex-direction: column; gap: 12px; margin-top: 46px; max-width: 680px; }
-  .val-row {
-    display: flex; align-items: flex-start; gap: 16px;
-    padding: 20px 22px; background: rgba(0,209,255,0.04);
-    border: 1px solid rgba(0,209,255,0.12); border-radius: 6px;
-    transition: transform 0.2s ease;
-  }
-  .val-row:hover { transform: translateX(5px); }
-  .val-check { color: var(--cyan); font-size: 16px; flex-shrink: 0; margin-top: 3px; }
-  .val-row p { font-size: 15px; color: var(--text-primary); line-height: 1.65; max-width: none; }
+    /* ----------- DISCLAIMER ----------- */
+    .disclaimer {
+      font-size: 16px;
+      color: var(--text-secondary);
+      font-style: italic;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 48px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-  /* ═══════════ WHO ═══════════ */
-  .who-list { display: flex; flex-direction: column; gap: 9px; margin-top: 42px; max-width: 640px; margin-left: auto; margin-right: auto; }
-  .who-row {
-    display: grid; grid-template-columns: 22px 1fr; gap: 14px; align-items: start;
-    padding: 17px 20px; background: rgba(47,128,237,0.05);
-    border-left: 3px solid var(--blue); border-radius: 0 6px 6px 0;
-    transition: transform 0.2s ease;
-  }
-  .who-row:hover { transform: translateX(4px); }
-  .who-arr { color: var(--cyan); font-size: 14px; margin-top: 4px; }
-  .who-row p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; max-width: none; }
+    /* ----------- FOOTER ----------- */
+    footer {
+      background: var(--navy);
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(47,128,237,0.12);
+    }
 
-  /* ═══════════ PRIMARY CTA ═══════════ */
-  #cta-main {
-    padding: 128px 28px;
-    background: linear-gradient(135deg, #0B1F3A 0%, #0D2D56 55%, #0B1F3A 100%);
-    position: relative; overflow: hidden; text-align: center;
-  }
-  #cta-main::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse 62% 55% at 50% 50%, rgba(47,128,237,0.13) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cta-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
-  .cta-h {
-    font-family: 'Syne', sans-serif; font-size: clamp(28px, 4.8vw, 50px);
-    font-weight: 800; color: var(--white); line-height: 1.12; margin-bottom: 16px;
-  }
-  .cta-sub { font-size: 17px; color: #ffffff; line-height: 1.8; margin-bottom: 50px; max-width: none; }
-  .cta-form-box {
-    background: rgba(47,128,237,0.07); border: 1px solid rgba(47,128,237,0.21);
-    border-radius: 10px; padding: 34px 30px 26px; margin-bottom: 18px;
-  }
-  .cta-trust { font-size: 13px; color: #ffffff; display: inline-flex; align-items: center; gap: 6px; }
+    footer p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin: 0;
+    }
 
-  /* ═══════════ TRANSITION (light) ═══════════ */
-  .t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .t-grid h2 {
-    font-family: 'Syne', sans-serif; font-size: clamp(24px, 3.4vw, 38px);
-    font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 18px;
-  }
-  .t-grid p { font-size: 16px; color: #3D5A72; line-height: 1.85; margin-bottom: 14px; }
-  .t-highlight { background: var(--navy); border-radius: 6px; padding: 18px 22px; margin-top: 20px; }
-  .t-highlight p { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #fff; margin: 0; max-width: none; }
-  .steps-col { display: flex; flex-direction: column; gap: 0; }
-  .sv-row {
-    display: flex; align-items: center; gap: 14px;
-    padding: 16px 18px; background: var(--card); border: 1px solid var(--border);
-    border-radius: 6px; transition: transform 0.2s ease;
-  }
-  .sv-row:hover { transform: translateX(4px); }
-  .sv-n { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--blue); width: 30px; flex-shrink: 0; line-height: 1; }
-  .sv-label { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 600; color: var(--white); }
-  .sv-sub { font-size: 12px; color: #fff; margin-top: 2px; }
-  .sv-conn { padding-left: 34px; color: var(--text-primary); font-size: 18px; line-height: 1; padding-top: 3px; padding-bottom: 3px; }
-  .sv-row.hl-row { border-color: rgba(0,209,255,0.26); background: rgba(0,209,255,0.04); }
-  .sv-row.hl-row .sv-label { color: var(--text-primary); }
-  .sv-row.hl-row .sv-sub { color: var(--text-secondary); }
-  .author-strip {
-    display: flex; align-items: center; gap: 22px;
-    padding: 30px; background: var(--navy); border-radius: 10px; margin-top: 60px;
-  }
-  .author-strip p,
-  .author-strip .as-text,
-  .author-strip .as-text strong {
-    color: #fff;
-  }
-  .as-photo { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid var(--blue); flex-shrink: 0; }
-  .as-name { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 5px; }
-  .as-text { font-size: 14px; color: #fff; line-height: 1.7; max-width: none; }
+    /* ----------- RESPONSIVE ----------- */
+    @media (max-width: 768px) {
+      main {
+        padding: 40px 20px 80px;
+      }
 
-  /* ═══════════ FINAL CTA ═══════════ */
-  #final-cta {
-    padding: 108px 28px;
-    background: var(--dark);
-    text-align: center;
-    position: relative;
-    color: #fff;
-  }
-  #final-cta::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse 48% 58% at 50% 50%, rgba(0,209,255,0.038) 0%, transparent 70%);
-    pointer-events: none;
-  }
+      h1 {
+        font-size: clamp(48px, 12vw, 64px);
+      }
 
-  /* ═══════════ FOOTER ═══════════ */
-  footer {
-    background: #030508; padding: 64px 28px 50px; text-align: center;
-    border-top: 1px solid rgba(47,128,237,0.07);
-    color: #fff;
-  }
-  .foot-logo { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 22px; }
-  .foot-logo img { width: 24px; height: 24px; object-fit: contain; opacity: 0.55; }
-  .foot-word { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 3px; color: #fff; }
-  .foot-line { font-size: 13px; color: #fff; margin-bottom: 7px; max-width: none; }
-  .foot-li {
-    display: inline-flex; align-items: center; gap: 7px;
-    margin-top: 20px; font-size: 13px; color: var(--cyan); transition: color 0.2s;
-  }
-  .foot-li:hover { color: #fff; }
-  .foot-li svg { width: 14px; height: 14px; fill: currentColor; }
+      h2 {
+        font-size: clamp(24px, 6vw, 32px);
+      }
 
-  /* ═══════════ STICKY MOBILE BAR ═══════════ */
-  #sticky-bar {
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 150;
-    background: rgba(11,31,58,0.97); backdrop-filter: blur(14px);
-    border-top: 1px solid rgba(47,128,237,0.18);
-    padding: 14px 20px;
-    display: none; align-items: center; justify-content: space-between; gap: 12px;
-    transform: translateY(100%); transition: transform 0.38s ease;
-  }
-  #sticky-bar.show { transform: translateY(0); }
-  #sticky-bar p { font-size: 13px; color: #fff; line-height: 1.4; max-width: none; }
-  #sticky-bar p strong { color: #fff; }
-  @media (max-width: 768px) { #sticky-bar { display: flex; } }
+      p {
+        font-size: 16px;
+      }
 
-  /* ═══════════ UTILS ═══════════ */
-  .mt-8  { margin-top:  8px; } .mt-16 { margin-top: 16px; } .mt-24 { margin-top: 24px; }
-  .mt-32 { margin-top: 32px; } .mt-48 { margin-top: 48px; } .mb-24 { margin-bottom: 24px; }
-  .mb-32 { margin-bottom: 32px; } .mb-48 { margin-bottom: 48px; }
+      .highlight-box,
+      .framework-box {
+        padding: 32px 24px;
+      }
 
-  /* ═══════════ RESPONSIVE ═══════════ */
-  @media (max-width: 960px) {
-    .hero-grid     { grid-template-columns: 1fr; gap: 52px; }
-    .hero-right    { order: -1; }
-    .reframe-grid  { grid-template-columns: 1fr; gap: 44px; }
-    .contrast-wrap { grid-template-columns: 1fr; }
-    .c-mid         { display: none; }
-    .spamm-cards   { grid-template-columns: repeat(3,1fr); }
-    .imagine-grid  { grid-template-columns: 1fr 1fr; }
-    .t-grid        { grid-template-columns: 1fr; gap: 48px; }
-  }
-  @media (max-width: 640px) {
-    .sec           { padding: 84px 20px; }
-    #hero          { padding: 118px 20px 84px; }
-    #cta-main      { padding: 90px 20px; }
-    #final-cta     { padding: 90px 20px; }
-    .hero-h1       { font-size: 34px; }
-    .prob-cards    { grid-template-columns: 1fr; }
-    .spamm-cards   { grid-template-columns: 1fr 1fr; }
-    .imagine-grid  { grid-template-columns: 1fr; }
-    .hero-form-box { padding: 20px 18px 16px; }
-    .cta-form-box  { padding: 24px 18px 18px; }
-    .author-strip  { flex-direction: column; text-align: center; }
-  }
+      .form-container {
+        padding: 24px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<!-- ════════════════ NAV ════════════════ -->
-<nav id="nav">
-  <div class="nav-inner">
+  <!-- --------------- NAV --------------- -->
+  <nav>
     <a href="#" class="nav-logo">
       <img src="spamm-logo.png" alt="SPAMM">
       <span class="nav-logo-text">SPAMM</span>
     </a>
-    <div class="nav-links">
-      <a href="#problem"   class="nav-link">The Problem</a>
-      <a href="#framework" class="nav-link">The System</a>
-      <a href="#value"     class="nav-link">What You Get</a>
-      <a href="#cta-main" onclick="event.preventDefault(); document.getElementById('cta-main').scrollIntoView({behavior:'smooth',block:'center'}); return false;" class="btn btn--primary" style="padding:9px 20px;font-size:11px;margin-left:8px;">Get the Framework</a>
-    </div>
-  </div>
-</nav>
+  </nav>
 
+  <!-- --------------- MAIN CONTENT --------------- -->
+  <main>
+    <div class="container">
 
-<!-- ════════════════ HERO ════════════════ -->
-<section id="hero">
-  <div class="hero-grid">
+      <!-- Title -->
+      <h1>SPAMM</h1>
 
-    <!-- Left -->
-    <div>
-      <div class="reveal mb-24"><span class="badge badge--blue">Free Framework</span></div>
+      <!-- Subtitle -->
+      <h2>Turn LinkedIn attention into owned leads and booked calls.</h2>
 
-      <h1 class="hero-h1 reveal d1">
-        Turn your LinkedIn audience into
-        <span class="accent-line">owned leads and booked calls</span>
-      </h1>
+      <!-- Target Audience -->
+      <p>For consultants, founders, and coaches already getting visibility, but still guessing where revenue comes from.</p>
 
-      <p class="hero-sub reveal d2">
-        You do not need more content. You need a system that turns attention into consistent, predictable revenue.
-      </p>
-      <p class="hero-nudge reveal d3">Right now your audience is watching. This shows you how to convert them.</p>
-
-      <div class="hero-form-box reveal d4" style="text-align:center;">
-        <a href="#cta-main" onclick="event.preventDefault(); document.getElementById('cta-main').scrollIntoView({behavior:'smooth',block:'center'}); return false;" class="btn btn--primary" style="display:inline-block;">Get the Free SPAMM Framework</a>
+      <!-- Problem Statement -->
+      <div class="highlight-box">
+        <p>Most people don't have a content problem.<br>They don't have a system behind it.</p>
       </div>
 
-      <p class="hero-trust reveal d5">&#128274; Free. No spam. Built for consultants and founders who mean business.</p>
-    </div>
+      <!-- Solution -->
+      <p>SPAMM shows you exactly where your attention is leaking, and how to fix it.</p>
 
-    <!-- Right: author card -->
-    <div class="hero-right reveal from-right d2">
-      <div class="author-card">
-        <div class="ac-head">
-          <img src="my-photo.png" alt="Kenneth Arinze" class="ac-photo">
-          <div>
-            <div class="ac-name">Kenneth Arinze</div>
-            <div class="ac-role">LinkedIn Conversion Strategist<br>and System Designer</div>
-          </div>
+      <!-- Framework Description -->
+      <div class="framework-box">
+        <p>One framework. Five stages.<br>From scroll ? to owned ? to revenue.</p>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="cta-section">
+        <div class="cta-label">[ Show Me The System ? ]</div>
+
+        <!-- Embedded Email Octopus Form -->
+        <div class="form-container">
+          <form id="subscribe-form" action="https://eocampaign1.com/form/6e58c80e-31b1-11f1-bcca-8ba7c22b694c" method="POST">
+          </form>
+          <script async src="https://eocampaign1.com/form/6e58c80e-31b1-11f1-bcca-8ba7c22b694c.js" data-form="6e58c80e-31b1-11f1-bcca-8ba7c22b694c"></script>
         </div>
-        <div class="ac-body">
-          <p class="ac-quote">"I have watched talented professionals lose leads every day because they had no system behind their content. SPAMM fixes that permanently."</p>
-          <img src="new-mockup.jpg" alt="SPAMM System" class="ac-flyer">
-        </div>
+
+        <p class="form-note">Takes 30 seconds. Free.</p>
       </div>
+
+      <!-- Disclaimer -->
+      <p class="disclaimer">If you're not already posting or getting engagement, this won't help much.</p>
+
     </div>
+  </main>
 
-  </div>
-</section>
-
-<div class="gap"></div>
-
-
-<!-- ════════════════ PROBLEM ════════════════ -->
-<section class="sec sec--dark" id="problem">
-  <div class="wrap">
-    <div class="reveal"><span class="eyebrow">The Problem</span></div>
-    <h2 class="display display--light d-xl reveal d1">You are building attention.<br><span class="hl">Not a system.</span></h2>
-    <p class="body mt-16 reveal d2">You post consistently. You get views, likes, even comments. But something is not converting and you feel it every month.</p>
-
-    <div class="pain-list">
-      <div class="pain-row reveal from-right d1"><div class="pain-tick"></div><p>Your audience lives on a platform you do not control. One algorithm shift and your reach disappears.</p></div>
-      <div class="pain-row reveal from-right d2"><div class="pain-tick"></div><p>Your results depend on your posting volume, not a repeatable process. Every week starts from zero.</p></div>
-      <div class="pain-row reveal from-right d3"><div class="pain-tick"></div><p>Leads are unpredictable. Some months you have conversations. Other months, silence.</p></div>
-      <div class="pain-row reveal from-right d4"><div class="pain-tick"></div><p>Your content builds awareness but awareness alone does not pay. You need a mechanism that converts it.</p></div>
-    </div>
-
-    <div class="breath"></div>
-
-    <div class="prob-cards">
-      <div class="prob-card slide-in-left">
-        <div class="prob-icon">&#128200;</div>
-        <h3>Platform Dependency</h3>
-        <p>LinkedIn owns your audience. You are renting relevance at full price while keeping none of the equity.</p>
-      </div>
-      <div class="prob-card reveal d2">
-        <div class="prob-icon">&#128065;&#65039;</div>
-        <h3>Vanity Metrics Trap</h3>
-        <p>Impressions and follower counts feel like progress. They are indicators of attention, not revenue.</p>
-      </div>
-      <div class="prob-card slide-in-right">
-        <div class="prob-icon">&#128682;</div>
-        <h3>No Conversion Layer</h3>
-        <p>Interest evaporates when there is nothing waiting on the other side. No page. No offer. No clear path.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="gap"></div>
-
-
-<!-- ════════════════ REFRAME ════════════════ -->
-<section class="sec sec--navy">
-  <div class="wrap">
-    <div class="reframe-grid">
-      <div>
-        <div class="reveal"><span class="eyebrow">The Shift</span></div>
-        <h2 class="display display--light d-xl reveal d1">LinkedIn is not<br>the <span class="hl">business.</span></h2>
-        <div class="breath-sm"></div>
-        <p class="body reveal d2">It is the entry point.</p>
-        <div class="breath-sm"></div>
-        <p class="body reveal d3">Without a system behind your content, growth stays unpredictable. It depends on your posting frequency, the algorithm, and timing.</p>
-        <div class="breath-sm"></div>
-        <p class="body reveal d4">What you need is not more content. It is a structure that turns attention into outcomes, consistently.</p>
-      </div>
-      <div class="insight-box reveal from-right d2">
-        <div class="insight-label">The core insight</div>
-        <p>The professionals who convert consistently do not use LinkedIn more. They use it <strong>differently.</strong><br><br>They treat it as a traffic source, not a destination. And they have a system waiting on the other side.</p>
-      </div>
-    </div>
-
-    <div class="breath"></div>
-
-    <div class="flow-strip reveal d2">
-      <div class="flow-node"><div class="fn-l">S</div><div class="fn-w">Stop Scroll</div></div>
-      <span class="flow-arr">&#8594;</span>
-      <div class="flow-node"><div class="fn-l">P</div><div class="fn-w">Position</div></div>
-      <span class="flow-arr">&#8594;</span>
-      <div class="flow-node"><div class="fn-l">A</div><div class="fn-w">Attract</div></div>
-      <span class="flow-arr">&#8594;</span>
-      <div class="flow-node"><div class="fn-l">M</div><div class="fn-w">Monetize</div></div>
-      <span class="flow-arr">&#8594;</span>
-      <div class="flow-node"><div class="fn-l">M</div><div class="fn-w">Own It</div></div>
-    </div>
-  </div>
-</section>
-
-<div class="gap"></div>
-
-
-<!-- ════════════════ CONTRAST ════════════════ -->
-<section class="sec sec--dark">
-  <div class="wrap">
-    <div class="reveal"><span class="eyebrow">The Difference</span></div>
-    <h2 class="display display--light d-xl reveal d1">Without a system <span class="hl">versus</span> with SPAMM</h2>
-
-    <div class="contrast-wrap">
-      <div class="c-col c-without slide-in-left">
-        <h3>Without a system</h3>
-        <div class="c-row"><span class="c-mark">&#8212;</span><span>Posting with no strategic direction</span></div>
-        <div class="c-row"><span class="c-mark">&#8212;</span><span>Feast or famine leads every month</span></div>
-        <div class="c-row"><span class="c-mark">&#8212;</span><span>Algorithm controls your reach</span></div>
-        <div class="c-row"><span class="c-mark">&#8212;</span><span>No clear path from content to conversation</span></div>
-        <div class="c-row"><span class="c-mark">&#8212;</span><span>Starting from zero with every post</span></div>
-      </div>
-      <div class="c-mid">
-        <div class="c-mid-line"></div>
-        <span class="c-mid-arr">&#8594;</span>
-        <div class="c-mid-line"></div>
-      </div>
-      <div class="c-col c-with slide-in-right">
-        <h3>With SPAMM</h3>
-        <div class="c-row"><span class="c-mark">&#8594;</span><span>Intentional content behind every post</span></div>
-        <div class="c-row"><span class="c-mark">&#8594;</span><span>Predictable lead flow from a repeatable system</span></div>
-        <div class="c-row"><span class="c-mark">&#8594;</span><span>Owned audience, reachable on your terms</span></div>
-        <div class="c-row"><span class="c-mark">&#8594;</span><span>Clear path from stranger to booked call</span></div>
-        <div class="c-row"><span class="c-mark">&#8594;</span><span>Effort that builds on itself over time</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="gap"></div>
-
-
-<!-- ════════════════ SPAMM FRAMEWORK ════════════════ -->
-<section class="sec sec--mid" id="framework">
-  <div class="wrap">
-    <div class="reveal"><span class="eyebrow">The Framework</span></div>
-    <h2 class="display display--light d-xl reveal d1">The <span class="hl">SPAMM</span> System</h2>
-    <p class="body mt-16 reveal d2">Five stages. One system. Each part moves the right person closer to becoming your client while filtering out everyone else automatically.</p>
-
-    <div class="spamm-cards">
-      <div class="sp-card reveal d1">
-        <div class="sp-head"><div class="sp-letter">S</div></div>
-        <div class="sp-body"><div class="sp-title">Stop the Scroll</div><div class="sp-desc">Interrupt attention at the point of contact before anything else can work.</div></div>
-      </div>
-      <div class="sp-card reveal d2">
-        <div class="sp-head"><div class="sp-letter">P</div></div>
-        <div class="sp-body"><div class="sp-title">Position Authority</div><div class="sp-desc">Make your expertise and offer crystal clear within the first few seconds.</div></div>
-      </div>
-      <div class="sp-card reveal d3">
-        <div class="sp-head alt"><div class="sp-letter">A</div></div>
-        <div class="sp-body"><div class="sp-title">Attract the Right People</div><div class="sp-desc">Filter for people who can actually become clients. Not everyone. The right ones.</div></div>
-      </div>
-      <div class="sp-card reveal d4">
-        <div class="sp-head"><div class="sp-letter">M</div></div>
-        <div class="sp-body"><div class="sp-title">Monetize Attention</div><div class="sp-desc">Turn passive engagement into intentional action with a clear, structured next step.</div></div>
-      </div>
-      <div class="sp-card reveal d5">
-        <div class="sp-head alt"><div class="sp-letter">M</div></div>
-        <div class="sp-body"><div class="sp-title">Move to Owned Platform</div><div class="sp-desc">Capture leads off LinkedIn into a system you control completely and permanently.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="gap"></div>
-
-
-<!-- ════════════════ IMAGINE ════════════════ -->
-<section class="sec sec--dark">
-  <div class="wrap--slim">
-    <div class="center">
-      <div class="reveal"><span class="eyebrow" style="justify-content:center;">Picture This</span></div>
-      <h2 class="display display--light d-lg center reveal d1">What it feels like<br>when the <span class="hl">system works</span></h2>
-      <p class="body mt-16 reveal d2" style="margin-left:auto;margin-right:auto;text-align:center;">No more guessing. No more hoping a post lands. Just a clear process working for you in the background.</p>
-    </div>
-
-    <div class="imagine-grid">
-      <div class="im-card slide-in-left">
-        <div class="im-num">01</div>
-        <h3>You know exactly what to post</h3>
-        <p>Every piece of content serves a specific stage of your system. Nothing is random anymore.</p>
-      </div>
-      <div class="im-card reveal d2">
-        <div class="im-num">02</div>
-        <h3>You know who you are attracting</h3>
-        <p>Your language filters automatically. The right people step forward. The wrong ones move on.</p>
-      </div>
-      <div class="im-card slide-in-right">
-        <div class="im-num">03</div>
-        <h3>You know how your content converts</h3>
-        <p>There is a clear, deliberate path from every post to a lead, and from every lead to a call.</p>
-      </div>
-    </div>
-
-    <div class="breath"></div>
-
-    <p class="reveal d2" style="font-size:18px;color:var(--gray);font-style:italic;line-height:1.9;text-align:center;max-width:540px;margin:0 auto;">
-      Instead of guessing, you are <strong style="color:var(--text-primary);">operating with a system.</strong><br>
-      Instead of hoping, you are <strong style="color:var(--cyan);">watching it work.</strong>
-    </p>
-  </div>
-</section>
-
-<div class="gap"></div>
-
-
-<!-- ════════════════ VALUE ════════════════ -->
-<section class="sec sec--navy" id="value">
-  <div class="wrap">
-    <div class="reveal"><span class="eyebrow">What You Get</span></div>
-    <h2 class="display display--light d-xl reveal d1">Everything inside<br>the <span class="hl">free framework</span></h2>
-
-    <div class="val-list">
-      <div class="val-row reveal d1"><span class="val-check">&#10003;</span><p><strong>The complete SPAMM system, step by step</strong> — all five stages in depth, not surface-level summaries.</p></div>
-      <div class="val-row reveal d2"><span class="val-check">&#10003;</span><p><strong>Real examples of what works and what fails</strong> — good versus bad positioning, hooks, and conversion paths.</p></div>
-      <div class="val-row reveal d3"><span class="val-check">&#10003;</span><p><strong>A repeatable process to turn content into leads</strong> — something you can implement the same week you receive it.</p></div>
-      <div class="val-row reveal d4"><span class="val-check">&#10003;</span><p><strong>A self-assessment scorecard</strong> — rate yourself across five dimensions and see exactly where you are leaking leads.</p></div>
-      <div class="val-row reveal d5"><span class="val-check">&#10003;</span><p><strong>Clarity on when you are ready to scale</strong> — know what needs to be in place before adding complexity.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="gap"></div>
-
-
-<!-- ════════════════ WHO ════════════════ -->
-<section class="sec sec--dark">
-  <div class="wrap--slim">
-    <div class="center">
-      <div class="reveal"><span class="eyebrow" style="justify-content:center;">Right Fit</span></div>
-      <h2 class="display display--light d-lg center reveal d1">This is for you <span class="hl">if...</span></h2>
-    </div>
-    <div class="who-list">
-      <div class="who-row reveal d1"><span class="who-arr">&#8594;</span><p>You are active on LinkedIn but not seeing <strong>consistent, predictable leads</strong> from your content.</p></div>
-      <div class="who-row reveal d2"><span class="who-arr">&#8594;</span><p>You want to turn your audience into <strong>actual business</strong> — not just followers and engagement numbers.</p></div>
-      <div class="who-row reveal d3"><span class="who-arr">&#8594;</span><p>You are ready to <strong>build a system</strong>, not just post content and hope something converts.</p></div>
-      <div class="who-row reveal d4"><span class="who-arr">&#8594;</span><p>You are a <strong>consultant, founder, or service professional</strong> who closes business through conversation.</p></div>
-      <div class="who-row reveal d5"><span class="who-arr">&#8594;</span><p>You understand that <strong>infrastructure matters</strong> and you are willing to build it the right way.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="gap"></div>
-
-
-<!-- ════════════════ PRIMARY CTA (single form) ════════════════ -->
-<section id="cta-main">
-  <div class="cta-inner">
-    <div class="reveal"><span class="badge badge--cyan mb-32" style="display:inline-block;margin-bottom:26px;">100% Free</span></div>
-    <h2 class="cta-h reveal d1">Get the SPAMM<br>Framework now</h2>
-    <p class="cta-sub reveal d2">Start building the system that converts your audience into leads and booked calls. Clear. Actionable. Ready to apply.</p>
-    <div class="cta-form-box reveal d3" id="main-form-wrap">
-      <form id="subscribe-form" action="https://eocampaign1.com/form/6e58c80e-31b1-11f1-bcca-8ba7c22b694c" method="POST">
-      </form>
-      <script async src="https://eocampaign1.com/form/6e58c80e-31b1-11f1-bcca-8ba7c22b694c.js" data-form="6e58c80e-31b1-11f1-bcca-8ba7c22b694c"></script>
-    </div>
-    <p class="cta-trust reveal d4">&#128274; No spam. Just a clear system you can apply right away.</p>
-  </div>
-</section>
-
-<div class="gap"></div>
-
-
-<!-- ════════════════ TRANSITION (light) ════════════════ -->
-<section class="sec sec--light">
-  <div class="wrap">
-    <div class="t-grid">
-      <div>
-        <div class="reveal"><span class="eyebrow eyebrow--light">And when your system is ready</span></div>
-        <h2 class="reveal d1" style="color: var(--text-primary);">Once it is working, you will need a place where everything <span class="hbl">converts.</span></h2>
-        <div class="breath-sm"></div>
-        <p class="reveal d2">You will reach a point where content alone is not enough. Your audience needs a place to convert, not just engage.</p>
-        <p class="reveal d3">That is not a website. That is a conversion engine — a structured page that takes your LinkedIn traffic and turns it into owned leads and booked calls.</p>
-        <div class="t-highlight reveal d4"><p>Not a website. A conversion engine. That is where the next level begins.</p></div>
-      </div>
-      <div class="steps-col slide-in-right">
-        <div class="sv-row"><div class="sv-n">1</div><div><div class="sv-label">Content Stops Attention</div><div class="sv-sub">Stage S — your post earns the scroll-stop</div></div></div>
-        <div class="sv-conn">&#8595;</div>
-        <div class="sv-row"><div class="sv-n">2</div><div><div class="sv-label">Authority Is Positioned</div><div class="sv-sub">Stage P — profile and messaging do the work</div></div></div>
-        <div class="sv-conn">&#8595;</div>
-        <div class="sv-row"><div class="sv-n">3</div><div><div class="sv-label">Right Audience Self-Selects</div><div class="sv-sub">Stage A — language filters automatically</div></div></div>
-        <div class="sv-conn">&#8595;</div>
-        <div class="sv-row"><div class="sv-n">4</div><div><div class="sv-label">CTA Points to Your System</div><div class="sv-sub">Stage M — one clear next step, every time</div></div></div>
-        <div class="sv-conn">&#8595;</div>
-        <div class="sv-row hl-row"><div class="sv-n">5</div><div><div class="sv-label">Your Page Converts the Lead</div><div class="sv-sub">Stage M — owned, permanent, compounding</div></div></div>
-      </div>
-    </div>
-
-    <div class="author-strip reveal d2">
-      <img src="my-photo.png" alt="Kenneth Arinze" class="as-photo">
-      <div>
-        <div class="as-name">Kenneth Arinze</div>
-        <p class="as-text">If you go through the framework, score yourself honestly, and find you are close but missing the conversion layer — reach out directly on LinkedIn. I work with a small number of consultants and founders each month to build the full system, including the conversion-focused website that anchors everything.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="gap"></div>
-
-
-<!-- ════════════════ FINAL CTA ════════════════ -->
-<section id="final-cta">
-  <div class="wrap--slim" style="position:relative;z-index:2;text-align:center;">
-    <h2 class="display d-lg center reveal d1">Build the system.<br>Then <span class="hl">scale it.</span></h2>
-    <p class="body mt-24 reveal d2" style="margin-left:auto;margin-right:auto;text-align:center;">You do not need more content. You need a system that makes your content work.</p>
-    <div class="mt-48 reveal d3">
-      <a href="#cta-main" class="btn btn--primary btn--lg">Get the Free SPAMM Framework</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════ FOOTER ════════════════ -->
-<footer>
-  <div class="foot-logo">
-    <img src="spamm-logo.png" alt="SPAMM">
-    <span class="foot-word">SPAMM</span>
-  </div>
-  <p class="foot-line">&#169; 2026 Kenneth Arinze</p>
-  <p class="foot-line">Your information is private. We will never share or sell your data.</p>
-  <a href="https://www.linkedin.com/in/kennetharinze" target="_blank" rel="noopener" class="foot-li">
-    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-    Connect on LinkedIn
-  </a>
-</footer>
-
-
-<!-- ════════════════ MOBILE STICKY BAR ════════════════ -->
-<div id="sticky-bar">
-  <p><strong>Get the SPAMM Framework</strong><br>Free. No spam. 30 seconds.</p>
-  <a href="#cta-main" onclick="event.preventDefault(); document.getElementById('cta-main').scrollIntoView({behavior:'smooth',block:'center'}); return false;" class="btn btn--primary" style="white-space:nowrap;flex-shrink:0;">Get It Free</a>
-</div>
-
-
-<!-- ════════════════ SCRIPTS ════════════════ -->
-<script>
-  /* Scroll reveal */
-  const revEls = document.querySelectorAll('.reveal');
-  const revObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.11 });
-  revEls.forEach(el => revObs.observe(el));
-
-  /* Nav shrink on scroll */
-  const navEl = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    navEl.classList.toggle('scrolled', window.scrollY > 55);
-  }, { passive: true });
-
-  /* Mobile sticky bar — show once main form scrolls out of view */
-  const stickyBar   = document.getElementById('sticky-bar');
-  const mainFormWrap = document.getElementById('main-form-wrap');
-
-  const barObs = new IntersectionObserver((entries) => {
-    const anyVisible = entries.some(e => e.isIntersecting);
-    if (!anyVisible) {
-      stickyBar.classList.add('show');
-    } else {
-      stickyBar.classList.remove('show');
-    }
-  }, { threshold: 0.15 });
-  barObs.observe(mainFormWrap);
-
-  /* Smooth scroll for all internal CTA anchors */
-  document.querySelectorAll('a[href="#cta-main"]').forEach(a => {
-    a.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.getElementById('cta-main');
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
-  });
-
-  window.addEventListener('load', () => { console.log('SPAMM ready.'); });
-</script>
+  <!-- --------------- FOOTER --------------- -->
+  <footer>
+    <p>Built by Kenneth Arinze.<br>� 2026 The SPAMM System</p>
+  </footer>
 
 </body>
 </html>
-

@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPAMM System — Turn LinkedIn Attention Into Owned Revenue</title>
+<meta name="description" content="I design conversion systems that move your audience from rented land to an owned asset. Leads captured. Calls booked. Revenue runs without you.">
+<meta property="og:image" content="https://spamm.site/assets/audit-logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:title" content="SPAMM System — Turn LinkedIn Attention Into Owned Revenue">
+<meta property="og:description" content="Free audit reveals why your LinkedIn isn't paying you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1F3A;
+    --blue: #2F80ED;
+    --cyan: #00D1FF;
+    --white: #FFFFFF;
+    --off: #F8FAFC;
+    --gray: #E2E8F0;
+    --text: #334155;
+    --radius: 20px;
+    --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+    --shadow-hover: 0 20px 40px -8px rgba(0,0,0,0.12), 0 10px 20px -8px rgba(0,0,0,0.06);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  .skip-link {
+    position: absolute; top: -40px; left: 0;
+    background: var(--blue); color: white;
+    padding: 8px 16px; text-decoration: none; z-index: 9999;
+    border-radius: 0 0 8px 0;
+  }
+  .skip-link:focus { top: 0; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  @media (min-width: 768px) { .container { padding: 0 40px; } }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray); padding: 16px 0;
+  }
+  .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo {
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem;
+    color: var(--navy); text-decoration: none; letter-spacing: -0.5px;
+  }
+  .nav-logo span { color: var(--blue); }
+  .nav-cta {
+    background: var(--blue); color: white; padding: 10px 22px;
+    border-radius: 40px; text-decoration: none; font-size: 0.88rem;
+    font-weight: 500; transition: all 0.2s; white-space: nowrap;
+  }
+  .nav-cta:hover { background: #1a56c9; transform: scale(1.02); }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-flex; flex-direction: column; align-items: center;
+    background: var(--blue); color: white; padding: 14px 32px;
+    border-radius: 40px; text-decoration: none; font-weight: 600;
+    font-size: 1rem; transition: all 0.25s;
+    box-shadow: 0 4px 14px rgba(47,128,237,0.3);
+    border: none; cursor: pointer; line-height: 1.3;
+  }
+  .btn-primary:hover { background: #1a56c9; transform: scale(1.02); box-shadow: 0 6px 20px rgba(47,128,237,0.4); }
+  .btn-subtext {
+    font-size: 0.7rem; font-weight: 400; opacity: 0.85;
+    letter-spacing: 0.01em; margin-top: 3px;
+  }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--navy); text-decoration: none; font-weight: 500;
+    font-size: 0.9rem; transition: all 0.2s;
+    background: rgba(255,255,255,0.7); border: 1px solid var(--gray);
+    padding: 10px 18px; border-radius: 40px;
+  }
+  .btn-secondary:hover { background: white; border-color: var(--blue); color: var(--blue); }
+
+  /* SECTIONS */
+  section { padding: 80px 0; }
+  @media (max-width: 768px) { section { padding: 60px 0; } }
+
+  .section-label {
+    font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px;
+  }
+
+  h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: -0.5px; line-height: 1.15; }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); color: var(--navy); }
+  h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: var(--navy); }
+  h3 { font-size: 1.15rem; color: var(--navy); }
+
+  /* HERO */
+  #hero {
+    padding: 90px 0 80px;
+    background: linear-gradient(160deg, #fff 60%, #f0f7ff 100%);
+    position: relative; overflow: hidden;
+  }
+  #hero::before {
+    content: ''; position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0,209,255,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center;
+  }
+  @media (min-width: 768px) { .hero-grid { grid-template-columns: 1fr auto; gap: 60px; } }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,209,255,0.08); border: 1px solid rgba(0,209,255,0.25);
+    color: var(--navy); font-size: 0.82rem; font-weight: 500;
+    padding: 6px 14px; border-radius: 40px; margin-bottom: 20px;
+  }
+  .hero-tag::before { content: '●'; color: var(--cyan); font-size: 0.5rem; }
+  .hero-title { margin-bottom: 20px; }
+  .hero-title .accent { color: var(--blue); }
+  .hero-sub {
+    font-size: 1.05rem; color: var(--text); line-height: 1.7;
+    max-width: 520px; margin-bottom: 36px;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+
+  .hero-photo-wrap { display: flex; justify-content: center; flex-shrink: 0; }
+  .hero-photo {
+    width: 200px; height: 200px; border-radius: 50%;
+    border: 4px solid white; box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    background: var(--gray); overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  @media (min-width: 768px) { .hero-photo { width: 260px; height: 260px; } }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 3rem; color: white;
+  }
+
+  /* LIVE NUMBERS SECTION */
+  #live-numbers {
+    background: var(--navy);
+    padding: 64px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  #live-numbers::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(0,209,255,0.07) 0%, transparent 60%);
+  }
+  .live-numbers-header { text-align: center; margin-bottom: 48px; position: relative; z-index: 1; }
+  .live-numbers-header .section-label { color: var(--cyan); }
+  .live-numbers-header h2 { color: white; font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 10px; }
+  .live-numbers-header p { color: rgba(255,255,255,0.6); font-size: 0.9rem; max-width: 520px; margin: 0 auto; }
+
+  .live-numbers-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    position: relative; z-index: 1;
+  }
+  @media (min-width: 640px) { .live-numbers-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1024px) { .live-numbers-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .live-num-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 24px 20px;
+    transition: all 0.3s;
+  }
+  .live-num-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(0,209,255,0.3);
+    transform: translateY(-3px);
+  }
+  .live-num-value {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--cyan); display: block; margin-bottom: 6px; line-height: 1;
+  }
+  .live-num-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+  .live-num-delta { font-size: 0.7rem; color: #4ade80; margin-top: 5px; font-weight: 600; }
+
+  .live-numbers-cta {
+    text-align: center; margin-top: 48px; position: relative; z-index: 1;
+  }
+  .live-numbers-cta h3 { color: white; font-size: 1.2rem; margin-bottom: 8px; }
+  .live-numbers-cta p { color: rgba(255,255,255,0.6); font-size: 0.9rem; max-width: 460px; margin: 0 auto 24px; line-height: 1.6; }
+
+  /* DATA ROMANCE */
+  #data { background: var(--off); }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+  @media (min-width: 1024px) { .stats-grid { grid-template-columns: repeat(5, 1fr); } }
+  .stat-card {
+    background: white; border-radius: var(--radius); padding: 28px 24px;
+    box-shadow: var(--shadow); transition: all 0.3s; border-top: 3px solid transparent;
+  }
+  .stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-top-color: var(--cyan); }
+  .stat-num {
+    font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800;
+    color: var(--cyan); display: block; margin-bottom: 10px; line-height: 1;
+  }
+  .stat-text { font-size: 0.82rem; color: var(--text); line-height: 1.5; }
+
+  /* TOP 1% */
+  #top-1-percent { background: white; }
+  .section-sub { color: var(--text); font-size: 1rem; max-width: 600px; margin-bottom: 48px; }
+
+  /* FLIP CARDS — 16:9 ratio based on 1280×720 */
+  .cards-scroll-mobile {
+    display: flex; gap: 20px; overflow-x: auto;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px; scrollbar-width: none;
+  }
+  .cards-scroll-mobile::-webkit-scrollbar { display: none; }
+  @media (min-width: 768px) {
+    .cards-scroll-mobile {
+      display: grid; grid-template-columns: repeat(3, 1fr); overflow-x: visible;
+    }
+  }
+  @media (min-width: 1024px) { .cards-scroll-mobile { grid-template-columns: repeat(4, 1fr); } }
+
+  .flip-card {
+    perspective: 1000px;
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    /* 16:9 aspect ratio */
+    aspect-ratio: 16 / 9;
+    cursor: pointer; min-width: 0;
+  }
+  @media (min-width: 768px) { .flip-card { flex: unset; } }
+
+  .flip-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+
+  .flip-front, .flip-back {
+    position: absolute; width: 100%; height: 100%;
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    border-radius: var(--radius); overflow: hidden;
+  }
+  .flip-front {
+    background: var(--navy);
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .flip-front img {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0.8;
+  }
+  /* Dark scrim only at the bottom 40% — text stays low */
+  .flip-front-overlay {
+    position: relative; z-index: 2;
+    background: linear-gradient(to top, rgba(7,20,40,0.96) 0%, rgba(7,20,40,0.7) 55%, transparent 100%);
+    padding: 28px 14px 13px;
+    /* Keep overlay only at bottom edge */
+    margin-top: auto;
+  }
+  .flip-front-name {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem;
+    color: white; line-height: 1.2;
+    /* Bold navy bg chip for contrast */
+    display: inline-block;
+    background: rgba(11,31,58,0.75);
+    border-radius: 4px; padding: 1px 5px; margin-bottom: 3px;
+  }
+  .flip-front-stat {
+    font-size: 0.72rem; color: var(--cyan); margin-top: 2px; font-weight: 600;
+    display: inline-block;
+    background: rgba(11,31,58,0.75);
+    border-radius: 4px; padding: 1px 5px;
+  }
+  .flip-front-hint {
+    font-size: 0.65rem; color: rgba(255,255,255,0.7); margin-top: 5px; font-style: italic;
+    display: inline-block;
+    background: rgba(11,31,58,0.6); border-radius: 4px; padding: 1px 5px;
+  }
+
+  .flip-back {
+    background: var(--navy);
+    transform: rotateY(180deg);
+    padding: 18px 16px;
+    display: flex; flex-direction: column; justify-content: flex-start;
+    border: 1px solid rgba(47,128,237,0.3);
+    overflow-y: auto;
+  }
+  .flip-back-name {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem;
+    color: var(--cyan); margin-bottom: 8px; flex-shrink: 0;
+  }
+  .flip-back-text {
+    font-size: 0.74rem; color: rgba(255,255,255,0.82); line-height: 1.6;
+    overflow-y: auto;
+  }
+
+  .cards-cta { text-align: center; margin-top: 48px; }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--off); overflow: hidden; }
+  .testimonials-track-wrap { overflow: hidden; position: relative; }
+  .testimonials-track-wrap::before,
+  .testimonials-track-wrap::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+  }
+  .testimonials-track-wrap::before { left: 0; background: linear-gradient(to right, var(--off), transparent); }
+  .testimonials-track-wrap::after { right: 0; background: linear-gradient(to left, var(--off), transparent); }
+  .testimonials-track {
+    display: flex; gap: 24px;
+    animation: scrollLeft 30s linear infinite; width: max-content;
+  }
+  .testimonials-track:hover { animation-play-state: paused; }
+  @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  .testi-card {
+    background: white; border-radius: var(--radius); padding: 24px 24px 20px;
+    box-shadow: var(--shadow); width: 340px; flex-shrink: 0;
+    border-left: 3px solid var(--cyan);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .testi-top { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    object-fit: cover; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    border: 2px solid var(--gray);
+  }
+  .testi-author-wrap { display: flex; flex-direction: column; }
+  .testi-author { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem; color: var(--navy); }
+  .testi-handle { font-size: 0.72rem; color: #94a3b8; }
+  .testi-quote {
+    font-size: 0.88rem; color: var(--navy); line-height: 1.65; font-style: italic;
+  }
+
+  /* AUDIT PITCH */
+  #audit-pitch { background: linear-gradient(135deg, var(--navy) 0%, #112d52 100%); color: white; text-align: center; }
+  #audit-pitch h2 { color: white; }
+  #audit-pitch .section-label { color: var(--cyan); }
+  .audit-benefits { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 32px 0 40px; }
+  .audit-benefit {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 40px; padding: 8px 18px; font-size: 0.85rem;
+    color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 8px;
+  }
+  .audit-benefit::before { content: '✓'; color: var(--cyan); font-weight: 700; }
+
+  /* TIERS */
+  #tiers { background: white; }
+  .tiers-grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 48px; }
+  @media (min-width: 768px) { .tiers-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .tier-card {
+    border: 1px solid var(--gray); border-radius: var(--radius); padding: 36px 28px;
+    border-top: 4px solid var(--blue); transition: all 0.3s; position: relative;
+  }
+  .tier-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+  .tier-card.featured { border-top-color: var(--cyan); background: linear-gradient(180deg, #f0faff 0%, white 30%); }
+
+  .tier-badge {
+    display: inline-block; background: var(--cyan); color: var(--navy);
+    font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 700;
+    padding: 3px 10px; border-radius: 20px; letter-spacing: 0.05em;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .tier-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--navy); margin-bottom: 6px; }
+  .tier-for { font-size: 0.82rem; color: var(--text); margin-bottom: 16px; line-height: 1.5; }
+  .tier-notice {
+    background: #fff5f5; border: 2px solid #ef4444; border-radius: 12px; padding: 14px 14px;
+    margin: 14px 0; display: flex; align-items: flex-start; gap: 10px;
+    color: #dc2626; font-size: 0.82rem; line-height: 1.5; font-weight: 500;
+  }
+  .tier-notice::before { content: '⚠'; font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+  .tier-price { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--blue); margin-bottom: 20px; }
+  .tier-features { list-style: none; margin-bottom: 24px; }
+  .tier-features li {
+    padding: 7px 0; font-size: 0.88rem; color: var(--text);
+    display: flex; align-items: flex-start; gap: 10px;
+    border-bottom: 1px solid var(--gray);
+  }
+  .tier-features li:last-child { border-bottom: none; }
+  .tier-features li::before { content: '→'; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .tier-actions { display: flex; flex-direction: column; gap: 10px; }
+  .tier-link { font-size: 0.83rem; color: var(--blue); background: none; border: none; cursor: pointer; text-align: left; text-decoration: underline; padding: 0; }
+  .tier-link:hover { color: #1a56c9; }
+
+  /* TIER CTA BUTTONS — pulse / wave animation */
+  .btn-tier {
+    display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 14px 22px; border-radius: 40px; text-decoration: none;
+    font-weight: 700; font-size: 0.88rem; transition: all 0.25s;
+    border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+    color: white; text-align: center; line-height: 1.3; width: 100%;
+    position: relative; overflow: hidden; gap: 6px;
+  }
+  .btn-tier-main { display: block; }
+  .btn-tier-sub {
+    font-size: 0.7rem; font-weight: 400; opacity: 0.85;
+    letter-spacing: 0.01em; line-height: 1.3;
+  }
+  .btn-tier-1 {
+    background: var(--blue);
+    box-shadow: 0 4px 14px rgba(47,128,237,0.35);
+    animation: pulseBlue 2.4s ease-in-out infinite;
+  }
+  .btn-tier-2 {
+    background: linear-gradient(135deg, var(--blue) 0%, #006fcc 100%);
+    box-shadow: 0 4px 18px rgba(47,128,237,0.45);
+    animation: pulseBlue 2s ease-in-out infinite;
+    color: white;
+  }
+  .btn-tier-3 {
+    background: var(--navy);
+    box-shadow: 0 4px 14px rgba(11,31,58,0.35);
+    animation: pulseNavy 2.4s ease-in-out infinite;
+  }
+  .btn-tier:hover {
+    transform: scale(1.03);
+    animation-play-state: paused;
+  }
+
+  /* Wave ripple on buttons */
+  .btn-tier::after {
+    content: ''; position: absolute; inset: 0; border-radius: 40px;
+    background: rgba(255,255,255,0); animation: waveRipple 2.4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .btn-tier-2::after { animation-delay: -0.4s; }
+  .btn-tier-3::after { animation-delay: -0.8s; }
+
+  @keyframes pulseBlue {
+    0%, 100% { box-shadow: 0 4px 14px rgba(47,128,237,0.35); }
+    50% { box-shadow: 0 4px 28px rgba(47,128,237,0.7), 0 0 0 6px rgba(47,128,237,0.12); }
+  }
+  @keyframes pulseNavy {
+    0%, 100% { box-shadow: 0 4px 14px rgba(11,31,58,0.35); }
+    50% { box-shadow: 0 4px 28px rgba(47,128,237,0.5), 0 0 0 6px rgba(47,128,237,0.1); }
+  }
+  @keyframes waveRipple {
+    0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.25); }
+    70% { box-shadow: 0 0 0 10px rgba(255,255,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  }
+
+  /* TRUST BOOSTER */
+  #trust { background: var(--off); }
+  .trust-inner { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+  @media (min-width: 768px) { .trust-inner { grid-template-columns: 1fr 1fr; } }
+  .trust-icons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .trust-icon-card { background: white; border-radius: 16px; padding: 20px; text-align: center; box-shadow: var(--shadow); }
+  .trust-icon-card .icon { font-size: 2rem; margin-bottom: 8px; }
+  .trust-icon-card p { font-size: 0.8rem; color: var(--text); line-height: 1.4; }
+
+  /* FAQ */
+  #faq { background: white; }
+  .faq-list { max-width: 760px; margin: 48px auto 0; }
+  details { border-bottom: 1px solid var(--gray); padding: 0; }
+  details:first-child { border-top: 1px solid var(--gray); }
+  summary {
+    list-style: none; padding: 20px 0; cursor: pointer;
+    font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.98rem;
+    color: var(--navy); display: flex; justify-content: space-between;
+    align-items: center; transition: color 0.2s;
+  }
+  summary:hover { color: var(--blue); }
+  summary::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--blue); flex-shrink: 0; transition: transform 0.3s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details[open] summary { color: var(--blue); }
+  .faq-answer { padding: 0 0 20px; font-size: 0.92rem; color: var(--text); line-height: 1.7; max-width: 680px; }
+
+  /* FINAL CTA */
+  #final-cta { background: linear-gradient(135deg, #f0f7ff 0%, white 50%, #f0faff 100%); text-align: center; }
+  .final-cta-inner { max-width: 640px; margin: 0 auto; }
+  #final-cta p { color: var(--text); font-size: 1rem; margin: 16px 0 36px; line-height: 1.7; }
+
+  /* FOOTER */
+  footer { background: var(--navy); color: white; padding: 0; overflow: hidden; }
+  .footer-scroll-bar {
+    background: rgba(255,255,255,0.06); padding: 14px 0; overflow: hidden;
+    white-space: nowrap; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-scroll-inner { display: inline-flex; gap: 0; animation: scrollLeft 20s linear infinite; width: max-content; }
+  .footer-scroll-item { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); padding: 0 28px; }
+  .footer-scroll-item span { color: var(--cyan); margin-left: 12px; }
+  .footer-bottom {
+    padding: 28px 0; display: flex; flex-wrap: wrap;
+    justify-content: space-between; align-items: center; gap: 16px;
+    background: var(--navy);
+  }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 24px; }
+  /* FIX: ensure footer links are visible against white background bleed */
+  .footer-links a {
+    color: var(--navy);
+    text-decoration: none; font-size: 0.85rem; transition: color 0.2s;
+    font-weight: 500;
+  }
+  .footer-links a:hover { color: #1a1a1a; }
+  .footer-attr { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+
+  /* MODALS */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(11,31,58,0.7); backdrop-filter: blur(4px);
+    z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px;
+    visibility: hidden;
+  }
+  .modal-overlay.open {
+    display: flex;
+    visibility: visible;
+  }
+  .modal-box {
+    background: white; border-radius: var(--radius); padding: 40px 36px;
+    max-width: 480px; width: 100%; box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+    position: relative; animation: modalIn 0.3s ease;
+  }
+  @keyframes modalIn { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+  .modal-close {
+    position: absolute; top: 16px; right: 16px;
+    background: none; border: none; cursor: pointer;
+    font-size: 1.4rem; color: var(--text); line-height: 1;
+    padding: 4px 8px; border-radius: 8px; transition: background 0.2s;
+  }
+  .modal-close:hover { background: var(--off); }
+  .modal-box h3 { font-size: 1.3rem; margin-bottom: 12px; }
+  .modal-box p { font-size: 0.92rem; color: var(--text); line-height: 1.7; margin-bottom: 24px; }
+  .modal-dismiss { display: block; text-align: center; margin-top: 14px; font-size: 0.82rem; color: var(--text); cursor: pointer; }
+  .modal-dismiss:hover { color: var(--navy); text-decoration: underline; }
+
+  /* BTN PRIMARY (hero / global) */
+  .btn-hero {
+    display: inline-flex; flex-direction: column; align-items: center;
+    background: var(--blue); color: white; padding: 15px 34px;
+    border-radius: 40px; text-decoration: none; font-weight: 700;
+    font-size: 1rem; transition: all 0.25s;
+    box-shadow: 0 4px 20px rgba(47,128,237,0.4);
+    border: none; cursor: pointer; line-height: 1.3;
+  }
+  .btn-hero:hover { background: #1a56c9; transform: scale(1.02); box-shadow: 0 6px 28px rgba(47,128,237,0.55); }
+  .btn-hero .btn-main-text { font-size: 1rem; font-weight: 700; }
+  .btn-hero .btn-sub { font-size: 0.68rem; font-weight: 400; opacity: 0.8; margin-top: 3px; letter-spacing: 0.02em; }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="audit-home.html" class="nav-logo">SPAMM<span>.</span></a>
+    <a href="#audit-pitch" class="nav-cta">Claim Your Free Audit →</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">Conversion Architecture for LinkedIn Professionals</div>
+        <h1 class="hero-title">
+          LinkedIn Gives You Attention.<br>
+          <span class="accent">Email Gives You a 7–8 Figure Business.</span>
+        </h1>
+        <p class="hero-sub">I design conversion systems that move your audience from rented land to an owned asset. Leads captured. Calls booked. Revenue runs without you.</p>
+        <div class="hero-actions">
+          <a href="#audit-pitch" class="btn-hero">
+            <span class="btn-main-text">Claim Your Free Audit →</span>
+            <span class="btn-sub">Your shortcut to LinkedIn revenue</span>
+          </a>
+          <a href="#top-1-percent" class="btn-secondary">
+            See 12 creators who built 7–8 figures with this exact system ↓
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">
+          <img src="assets/my-photo-audit.png" alt="Kenneth Arinze" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-placeholder" style="display:none;">KA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE REVENUE NUMBERS -->
+<section id="live-numbers">
+  <div class="container">
+    <div class="live-numbers-header">
+      <div class="section-label">2025 Revenue Intelligence</div>
+      <h2>The Revenue Is Already Flowing.</h2>
+      <p>These are the markets your LinkedIn audience lives inside. The question is: are you capturing your share?</p>
+    </div>
+    <div class="live-numbers-grid">
+      <div class="live-num-card reveal reveal-delay-1">
+        <span class="live-num-value" data-target="7.24" data-prefix="$" data-suffix="B">$0</span>
+        <div class="live-num-label">Global Coaching Industry</div>
+        <div class="live-num-delta">↑ 13.8% from 2024</div>
+      </div>
+      <div class="live-num-card reveal reveal-delay-1">
+        <span class="live-num-value" data-target="403" data-prefix="$" data-suffix="B">$0</span>
+        <div class="live-num-label">Management Consulting</div>
+        <div class="live-num-delta">↑ 9.7% from 2024</div>
+      </div>
+      <div class="live-num-card reveal reveal-delay-2">
+        <span class="live-num-value" data-target="174" data-prefix="$" data-suffix="B">$0</span>
+        <div class="live-num-label">Creator Economy</div>
+        <div class="live-num-delta">↑ From $154.5B in 2024</div>
+      </div>
+      <div class="live-num-card reveal reveal-delay-2">
+        <span class="live-num-value" data-target="273" data-prefix="$" data-suffix="B">$0</span>
+        <div class="live-num-label">B2B Social Media Ad Spend</div>
+        <div class="live-num-delta">↑ 11.1% from 2024</div>
+      </div>
+      <div class="live-num-card reveal reveal-delay-3">
+        <span class="live-num-value" data-target="1.27" data-prefix="$" data-suffix="T">$0</span>
+        <div class="live-num-label">Freelance Economy (U.S.)</div>
+        <div class="live-num-delta">Contributed to U.S. GDP</div>
+      </div>
+      <div class="live-num-card reveal reveal-delay-3">
+        <span class="live-num-value" data-target="17.81" data-prefix="$" data-suffix="B">$0</span>
+        <div class="live-num-label">LinkedIn Total Revenue 2025</div>
+        <div class="live-num-delta">↑ 9% YoY</div>
+      </div>
+      <div class="live-num-card reveal reveal-delay-4">
+        <span class="live-num-value" data-target="277" data-prefix="" data-suffix="%">0%</span>
+        <div class="live-num-label">LinkedIn Lead Gen vs. Facebook/Twitter</div>
+        <div class="live-num-delta">More effective at generating B2B leads</div>
+      </div>
+      <div class="live-num-card reveal reveal-delay-4">
+        <span class="live-num-value" data-target="96" data-prefix="" data-suffix="%">0%</span>
+        <div class="live-num-label">B2B Marketers on LinkedIn</div>
+        <div class="live-num-delta">Use it for organic content</div>
+      </div>
+    </div>
+    <div class="live-numbers-cta reveal">
+      <h3>The numbers are clear. The revenue is flowing.</h3>
+      <p>If you're a coach, consultant, or founder and you're not capturing your share — it's not your content. It's your conversion system.</p>
+      <a href="#audit-pitch" class="btn-hero" style="display:inline-flex; background: var(--cyan); color: var(--navy);">
+        <span class="btn-main-text">See the System That Captures It →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DATA ROMANCE -->
+<section id="data">
+  <div class="container">
+    <div class="section-label">The Gap</div>
+    <h2 class="reveal">The Math Most Founders Never See</h2>
+    <div class="stats-grid">
+      <div class="stat-card reveal reveal-delay-1">
+        <span class="stat-num">$8.2K</span>
+        <p class="stat-text">The average coach with 2k followers leaves $8,200/month in untapped email revenue.</p>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <span class="stat-num">5×</span>
+        <p class="stat-text">Email converts 5x better than LinkedIn DMs. Yet 74% of founders have no active list.</p>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <span class="stat-num">80%</span>
+        <p class="stat-text">Top creators spend 80% of their time on the system that receives traffic — not the post.</p>
+      </div>
+      <div class="stat-card reveal reveal-delay-4">
+        <span class="stat-num">32%</span>
+        <p class="stat-text">Automated email sequences generate 32% of total revenue for solo businesses.</p>
+      </div>
+      <div class="stat-card reveal reveal-delay-5">
+        <span class="stat-num">$50K</span>
+        <p class="stat-text">One owned landing page + email capture equals $50k/year for the typical B2B consultant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP 1% -->
+<section id="top-1-percent">
+  <div class="container">
+    <div class="section-label">Proof</div>
+    <h2 class="reveal">12 LinkedIn Creators Who Built 7–8 Figures With This Exact Architecture.</h2>
+    <p class="section-sub reveal">Tap any card to see how they did it. Then ask yourself what you're leaving on the table.</p>
+
+    <div class="cards-scroll-mobile">
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Tom Pestridge — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-1.jpg" alt="Tom Pestridge" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Tom Pestridge</div>
+              <div class="flip-front-stat">189k followers + 170k newsletter</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Tom Pestridge</div>
+            <p class="flip-back-text">Built two agencies and a personal brand reaching millions. Daily content feeds a 170k-subscriber newsletter, funneling into 7 and 8-figure creator partnerships. No cold outreach. Just a conversion machine.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Justin Welsh — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-2.jpg" alt="Justin Welsh" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Justin Welsh</div>
+              <div class="flip-front-stat">$12.5M solo, 86% margin</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Justin Welsh</div>
+            <p class="flip-back-text">Turned 845k LinkedIn followers into a one-person revenue engine. Content drives his 180k-reader newsletter, which feeds The Creator MBA. No team. No ads. Just an owned list and a high-margin product.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Jessie van Breugel — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-3.jpg" alt="Jessie van Breugel" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Jessie van Breugel</div>
+              <div class="flip-front-stat">$3.1M for 200+ clients</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Jessie van Breugel</div>
+            <p class="flip-back-text">Built Authority Figures — a 90-day program with a $5k revenue guarantee. Profile as proof: case studies, clear promise, low-friction entry. Clients convert without a massive audience.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Luke Tobin — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-4.jpg" alt="Luke Tobin" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Luke Tobin</div>
+              <div class="flip-front-stat">3x exited, 161k + 100k newsletter</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Luke Tobin</div>
+            <p class="flip-back-text">Content attracts agency owners and founders who DM about investments, exits, and speaking. Daily posts feed a weekly newsletter that pre-sells trust — leading to eight-figure exits and deal flow.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="James Kamanski — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-5.jpg" alt="James Kamanski" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">James Kamanski</div>
+              <div class="flip-front-stat">Lawyer, $500k telehealth</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">James Kamanski</div>
+            <p class="flip-back-text">Co-founded a telehealth site generating $500k+ while practicing law full time. LinkedIn now drives a newsletter building trust and leads for leadership coaching. Zero ad spend.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Codie A. Sanchez — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-6.jpg" alt="Codie A. Sanchez" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Codie A. Sanchez</div>
+              <div class="flip-front-stat">1M newsletter, 9k+ paid members</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Codie A. Sanchez</div>
+            <p class="flip-back-text">563k LinkedIn followers funnel into Contrarian Thinking. Posts drive a free newsletter, a lead magnet, and a 9k-member paid community. Revenue flows from memberships and deal flow.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Will McTighe — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-7.jpg" alt="Will McTighe" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Will McTighe</div>
+              <div class="flip-front-stat">3k → 446k, bootstrapped SaaS</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Will McTighe</div>
+            <p class="flip-back-text">Turned his LinkedIn growth into Saywhat.ai — subscriptions from $59 to $299/month, 600+ users, zero ad spend. His audience became the entire pipeline.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Chris Donnelly — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-8.jpg" alt="Chris Donnelly" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Chris Donnelly</div>
+              <div class="flip-front-stat">1.2M followers, 8-figure exits</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Chris Donnelly</div>
+            <p class="flip-back-text">LinkedIn drives AI software, a creator accelerator, and an investment company. Authority content funnels into SaaS subscriptions and high-net-worth deal flow. Multi-lever pipeline, pure organic reach.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Josh S. — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-9.jpg" alt="Josh S." onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Josh S.</div>
+              <div class="flip-front-stat">$400k generated for founders</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Josh S.</div>
+            <p class="flip-back-text">Packaged the playbook into The Creator Accelerator. Results: $400k revenue spike for one founder, £165k consulting project for another. LinkedIn profile sells the system without a newsletter.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Charlie Hills — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-10.jpg" alt="Charlie Hills" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Charlie Hills</div>
+              <div class="flip-front-stat">217k followers, 6-figure businesses</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Charlie Hills</div>
+            <p class="flip-back-text">Runs MarTech AI newsletter (50k) plus two offers: Vislo (AI tool) and Linked Agency (done-for-you content). Attention funnels into SaaS subscriptions and high-ticket retainers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Denis Panjuta — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-11.jpg" alt="Denis Panjuta" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Denis Panjuta</div>
+              <div class="flip-front-stat">170k followers, done-for-you</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Denis Panjuta</div>
+            <p class="flip-back-text">Uses his 170k profile as live proof. Tech founders commit 60 minutes/month while he handles strategy, writing, and posting. His LinkedIn is the entire sales funnel.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" role="button" tabindex="0" aria-label="Alex Hormozi — tap to see case study">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="assets/audit-card-12.jpg" alt="Alex Hormozi" onerror="this.style.display='none'">
+            <div class="flip-front-overlay">
+              <div class="flip-front-name">Alex Hormozi</div>
+              <div class="flip-front-stat">$100M portfolio, 934k followers</div>
+              <div class="flip-front-hint">Tap to see how →</div>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-name">Alex Hormozi</div>
+            <p class="flip-back-text">Two-tier funnel: free content builds trust at scale. Filter: "Own a $1M EBITDA company? Reach out." LinkedIn is a deal-sourcing machine for equity and partnerships. Simple. Ruthlessly effective.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cards-cta reveal">
+      <a href="#audit-pitch" class="btn-hero" style="display:inline-flex;">
+        <span class="btn-main-text">Build Your Version of This System →</span>
+        <span class="btn-sub">Choose the tier that fits where you are right now</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label">Real Words</div>
+    <h2 class="reveal">Real Words From People Who Built Wealth Off the Platforms</h2>
+  </div>
+  <div style="margin-top: 40px;">
+    <div class="testimonials-track-wrap">
+      <div class="testimonials-track">
+        <div class="testi-card">
+          <div class="testi-top">
+            <img class="testi-avatar" src="assets/audit-case-1.jpg" alt="Gary Vaynerchuk" onerror="this.style.opacity='0.5'">
+            <div class="testi-author-wrap">
+              <div class="testi-author">Gary Vaynerchuk</div>
+              <div class="testi-handle">Entrepreneur, Media Owner</div>
+            </div>
+          </div>
+          <p class="testi-quote">"Social media is rented land. Email is your house. You own that list. You own that relationship."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <img class="testi-avatar" src="assets/audit-case-2.jpg" alt="Justin Welsh" onerror="this.style.opacity='0.5'">
+            <div class="testi-author-wrap">
+              <div class="testi-author">Justin Welsh</div>
+              <div class="testi-handle">$12.5M Solo Creator</div>
+            </div>
+          </div>
+          <p class="testi-quote">"Likes don't pay the bills. Your impact creates your income."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <img class="testi-avatar" src="assets/audit-case-3.jpg" alt="Akande Muizz" onerror="this.style.opacity='0.5'">
+            <div class="testi-author-wrap">
+              <div class="testi-author">Akande Muizz</div>
+              <div class="testi-handle">Creator & Strategist</div>
+            </div>
+          </div>
+          <p class="testi-quote">"Your email list is your most valuable asset."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <img class="testi-avatar" src="assets/audit-case-4.png" alt="Kit" onerror="this.style.opacity='0.5'">
+            <div class="testi-author-wrap">
+              <div class="testi-author">Kit (ConvertKit)</div>
+              <div class="testi-handle">Creator Platform</div>
+            </div>
+          </div>
+          <p class="testi-quote">"You own your audience when you have an email list. No algorithm change controls who sees your next email."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <img class="testi-avatar" src="assets/audit-case-5.jpg" alt="Justin Welsh" onerror="this.style.opacity='0.5'">
+            <div class="testi-author-wrap">
+              <div class="testi-author">Justin Welsh</div>
+              <div class="testi-handle">$12.5M Solo Creator</div>
+            </div>
+          </div>
+          <p class="testi-quote">"The internet is the greatest wealth building opportunity of our lifetime. Learn to leverage it."</p>
+        </div>
+        <!-- Duplicated for seamless loop -->
+        <div class="testi-card">
+          <div class="testi-top">
+            <img class="testi-avatar" src="assets/audit-case-1.jpg" alt="Gary Vaynerchuk" onerror="this.style.opacity='0.5'">
+            <div class="testi-author-wrap">
+              <div class="testi-author">Gary Vaynerchuk</div>
+              <div class="testi-handle">Entrepreneur, Media Owner</div>
+            </div>
+          </div>
+          <p class="testi-quote">"Social media is rented land. Email is your house. You own that list. You own that relationship."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <img class="testi-avatar" src="assets/audit-case-2.jpg" alt="Justin Welsh" onerror="this.style.opacity='0.5'">
+            <div class="testi-author-wrap">
+              <div class="testi-author">Justin Welsh</div>
+              <div class="testi-handle">$12.5M Solo Creator</div>
+            </div>
+          </div>
+          <p class="testi-quote">"Likes don't pay the bills. Your impact creates your income."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <img class="testi-avatar" src="assets/audit-case-3.jpg" alt="Akande Muizz" onerror="this.style.opacity='0.5'">
+            <div class="testi-author-wrap">
+              <div class="testi-author">Akande Muizz</div>
+              <div class="testi-handle">Creator & Strategist</div>
+            </div>
+          </div>
+          <p class="testi-quote">"Your email list is your most valuable asset."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <img class="testi-avatar" src="assets/audit-case-4.png" alt="Kit" onerror="this.style.opacity='0.5'">
+            <div class="testi-author-wrap">
+              <div class="testi-author">Kit (ConvertKit)</div>
+              <div class="testi-handle">Creator Platform</div>
+            </div>
+          </div>
+          <p class="testi-quote">"You own your audience when you have an email list. No algorithm change controls who sees your next email."</p>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <img class="testi-avatar" src="assets/audit-case-5.jpg" alt="Justin Welsh" onerror="this.style.opacity='0.5'">
+            <div class="testi-author-wrap">
+              <div class="testi-author">Justin Welsh</div>
+              <div class="testi-handle">$12.5M Solo Creator</div>
+            </div>
+          </div>
+          <p class="testi-quote">"The internet is the greatest wealth building opportunity of our lifetime. Learn to leverage it."</p>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center; font-size:0.72rem; color: #94a3b8; margin-top: 20px;">Real statements, publicly shared. This is the philosophy behind the system.</p>
+  </div>
+</section>
+
+<!-- AUDIT PITCH -->
+<section id="audit-pitch">
+  <div class="container" style="text-align:center; max-width: 700px;">
+    <div class="section-label">Free Audit</div
+    <h2 class="reveal">Stop Guessing Why Your LinkedIn Isn't Paying You</h2>
+    <p style="color: rgba(255,255,255,0.75); margin: 16px 0 32px; font-size: 1rem; line-height: 1.7;" class="reveal">In 5 minutes, you'll identify the exact leak in your revenue pipeline. Receive a personalized diagnostic and a preview of the 90-day roadmap the top 1% use.</p>
+    <div class="audit-benefits reveal">
+      <span class="audit-benefit">Personalized Leak Diagnostic</span>
+      <span class="audit-benefit">Revenue Readiness Score</span>
+      <span class="audit-benefit">90-Day Roadmap Preview</span>
+    </div>
+    <a href="audit.html" class="btn-hero reveal" style="display:inline-flex; background: var(--cyan); color: var(--navy); margin-top: 8px;">
+      <span class="btn-main-text">Find My Revenue Leak →</span>
+      <span class="btn-sub" style="color: rgba(11,31,58,0.7);">Pinpoint the gap in under 5 minutes</span>
+    </a>
+  </div>
+</section>
+
+<!-- TIERS -->
+<!--
+<section id="tiers">
+  <div class="container">
+    <div class="section-label">Choose Your Build</div>
+    <h2 class="reveal">Three Revenue Systems. One Right Fit.</h2>
+    <p style="color:var(--text); max-width:540px; margin-top:10px; font-size:0.95rem; line-height:1.7;" class="reveal">Each tier is a done-for-you asset, not a template. Built to your offer, your audience, your goals.</p>
+    <div class="tiers-grid">
+
+      <div class="tier-card reveal reveal-delay-1">
+        <div class="tier-name">The Launchpad</div>
+        <div class="tier-for">You have attention. You need your first owned asset to catch it.</div>
+        <div class="tier-notice">No payments will be made. Contact me on linkedIn to request a site for your business.</div>
+        <div class="tier-price">$250 – $500</div>
+        <ul class="tier-features">
+          <li>Branded landing page with email capture</li>
+          <li>About section and contact path</li>
+          <li>Stops traffic leaking to a dead end</li>
+          <li>Builds an email list you own from day one</li>
+          <li>Live in days, not months</li>
+        </ul>
+        <div class="tier-actions">
+          <a href="audit.html" class="btn-tier btn-tier-1"><span class="btn-tier-main">Start Building My Asset →</span><span class="btn-tier-sub">take a free audit, find out why you're not making money from linkedin</span></a>
+          <button class="tier-link" onclick="openModal('modal-how-1')">How this works</button>
+          <button class="tier-link" onclick="openModal('modal-demo')">Request a demo site</button>
+        </div>
+      </div>
+
+      <div class="tier-card featured reveal reveal-delay-2" id="tier-2">
+        <div class="tier-badge">Most Popular</div>
+        <div class="tier-name">The Authority Engine</div>
+        <div class="tier-for">You have an offer. You need a system that books calls and qualifies leads before they reach you.</div>
+        <div class="tier-notice">No payments will be made. Contact me on linkedIn to request a site for your business.</div>
+        <div class="tier-price">$650 – $1,000</div>
+        <ul class="tier-features">
+          <li>Premium 2–3 page conversion site</li>
+          <li>Newsletter and CRM integration</li>
+          <li>Testimonials section and webinar registration</li>
+          <li>Booking calendar that pre-qualifies leads</li>
+          <li>Every visitor either converts or self-selects out</li>
+        </ul>
+        <div class="tier-actions">
+          <a href="audit.html" class="btn-tier btn-tier-2"><span class="btn-tier-main">Secure My Authority Engine →</span><span class="btn-tier-sub">take a free audit, find out why you're not making money from linkedin</span></a>
+          <button class="tier-link" onclick="openModal('modal-how-2')">How this works</button>
+          <button class="tier-link" onclick="openModal('modal-demo')">Request a demo site</button>
+        </div>
+      </div>
+
+      <div class="tier-card reveal reveal-delay-3">
+        <div class="tier-name">The Autonomous System</div>
+        <div class="tier-for">You're established. You need infrastructure that captures, nurtures, and converts while you focus on delivery.</div>
+        <div class="tier-notice">No payments will be made. Contact me on linkedIn to request a site for your business.</div>
+        <div class="tier-price">$1,500 – $3,000</div>
+        <ul class="tier-features">
+          <li>Full 5–7 page conversion system</li>
+          <li>Legal pages, CRM and email automation</li>
+          <li>Automated follow-up sequences</li>
+          <li>Advanced booking and intake flows</li>
+          <li>Business runs without you being online</li>
+        </ul>
+        <div class="tier-actions">
+          <a href="audit.html" class="btn-tier btn-tier-3"><span class="btn-tier-main">Reserve My Autonomous Build →</span><span class="btn-tier-sub">take a free audit, find out why you're not making money from linkedin</span></a>
+          <button class="tier-link" onclick="openModal('modal-how-3')">How this works</button>
+          <button class="tier-link" onclick="openModal('modal-demo')">Request a demo site</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+-->
+
+<!-- TRUST BOOSTER -->
+<section id="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="reveal">
+        <div class="section-label">Why It Works</div>
+        <h2>A System That Earns While You Sleep</h2>
+        <p style="color: var(--text); margin-top: 16px; line-height: 1.8; font-size: 0.98rem;">Automation isn't about being lazy. It's about building a business that doesn't need you online to grow. Email capture, nurture sequences, and booking funnels run 24/7. Yesterday's post becomes tomorrow's client. The top 1% don't work harder. They build smarter infrastructure.</p>
+      </div>
+      <div class="trust-icons reveal reveal-delay-2">
+        <div class="trust-icon-card">
+          <div class="icon">📬</div>
+          <p>Email capture running 24/7</p>
+        </div>
+        <div class="trust-icon-card">
+          <div class="icon">📅</div>
+          <p>Booking funnels converting while you sleep</p>
+        </div>
+        <div class="trust-icon-card">
+          <div class="icon">🔁</div>
+          <p>Automated sequences nurturing leads</p>
+        </div>
+        <div class="trust-icon-card">
+          <div class="icon">📈</div>
+          <p>Your system compounds. Attention doesn't decay.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label">Questions</div>
+    <h2 class="reveal" style="text-align:center;">Everything You Need to Know</h2>
+    <div class="faq-list">
+
+      <details>
+        <summary>How soon will I see results?</summary>
+        <p class="faq-answer">Leads can start flowing within 7 days of your asset going live. Consistent revenue typically follows within 90 days once your content is pointing to the right destination.</p>
+      </details>
+
+      <details>
+        <summary>Do I need a large following for this to work?</summary>
+        <p class="faq-answer">No. Many clients with 1,500 to 2,500 engaged followers book consistent calls because they have a clear conversion path. The system works with the audience you already have.</p>
+      </details>
+
+      <details>
+        <summary>I'm not technical. Can I still use this?</summary>
+        <p class="faq-answer">You don't touch the technical side. I build and configure everything. You focus on your content and conversations. The system handles capture and follow-up.</p>
+      </details>
+
+      <details>
+        <summary>Is this a course or do you actually build the asset?</summary>
+        <p class="faq-answer">I build the conversion infrastructure for you. The free audit leads to a diagnostic and optional 90-day roadmap. Service tiers are done-for-you builds. You can implement the roadmap yourself or have me build it.</p>
+      </details>
+
+      <details>
+        <summary>How is this different from a web designer?</summary>
+        <p class="faq-answer">Most designers build beautiful brochures. I build conversion machines designed specifically to receive LinkedIn traffic and turn it into owned leads. Every element serves revenue, not aesthetics.</p>
+      </details>
+
+      <details>
+        <summary>I already have a website. Why would I need this?</summary>
+        <p class="faq-answer">Most websites inform. Mine capture. If your current site doesn't turn LinkedIn visitors into email subscribers or booked calls, you're leaking money. The audit reveals the exact gap.</p>
+      </details>
+
+      <details>
+        <summary>What happens after the audit?</summary>
+        <p class="faq-answer">You receive a personalized PDF report within 24–48 hours with your leak analysis and a 90-day revenue roadmap preview. From there you decide: implement yourself or have me build it.</p>
+      </details>
+
+      <details>
+        <summary>Is there a guarantee?</summary>
+        <p class="faq-answer">I can't guarantee revenue — your content and offer quality play a role. I can guarantee the system will be built to conversion best practices used by the top 1%. Most clients see increased lead flow within 30 days of pointing traffic to the new asset.</p>
+      </details>
+
+      <details>
+        <summary>Who is this not for?</summary>
+        <p class="faq-answer">Not for people looking for a quick hack or a viral formula. It's for professionals ready to invest in an asset they own. If you're not willing to commit to 90 days of focused execution, the audit will make that clear.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="final-cta">
+  <div class="container">
+    <div class="final-cta-inner reveal">
+      <div class="section-label" style="text-align:center;">Last Call</div>
+      <h2>You've Seen How the Top 1% Build Wealth From LinkedIn.</h2>
+      <p>They own the destination. They own the relationship. They own the revenue. The gap between you and them is not your content — it's the system behind it.</p>
+      <a href="#audit-pitch" class="btn-hero" style="display:inline-flex;">
+        <span class="btn-main-text">Claim Your Revenue System →</span>
+        <span class="btn-sub">Take a Free Audit & Claim Your Revenue</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-scroll-bar">
+    <div class="footer-scroll-inner">
+      <span class="footer-scroll-item">For Founders <span>·</span></span>
+      <span class="footer-scroll-item">For Consultants <span>·</span></span>
+      <span class="footer-scroll-item">For Coaches <span>·</span></span>
+      <span class="footer-scroll-item">For B2B Operators <span>·</span></span>
+      <span class="footer-scroll-item">For Service Professionals <span>·</span></span>
+      <span class="footer-scroll-item">For Founders <span>·</span></span>
+      <span class="footer-scroll-item">For Consultants <span>·</span></span>
+      <span class="footer-scroll-item">For Coaches <span>·</span></span>
+      <span class="footer-scroll-item">For B2B Operators <span>·</span></span>
+      <span class="footer-scroll-item">For Service Professionals <span>·</span></span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="audit-home.html#hero">About</a>
+      <a href="audit.html">Free Audit</a>
+      <a href="audit-home.html#top-1-percent">Top 1%</a>
+      <a href="audit-home.html#faq">FAQ</a>
+    </nav>
+    <div class="footer-attr">SPAMM System — Turn LinkedIn Attention Into Owned Revenue.</div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-how-1" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-how-1')" aria-label="Close">×</button>
+    <h3>The Launchpad — How It Works</h3>
+    <p>A high-speed, conversion-optimized landing page built to catch your LinkedIn traffic. Branded email capture form, clear contact path, about section — live within days. No code on your end. No maintenance. Your only job: point your content at it.</p>
+    <a href="audit.html" class="btn-tier btn-tier-1" style="display:block; text-align:center;">Start Building My Asset →</a>
+    <span class="modal-dismiss" onclick="closeModal('modal-how-1')">Got it, close this</span>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-how-2" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-how-2')" aria-label="Close">×</button>
+    <h3>The Authority Engine — How It Works</h3>
+    <p>A premium multi-page site built to match your high-ticket positioning. Newsletter integration, testimonials, booking calendar, webinar registration. Every element qualifies leads before they reach you — so conversations start warm and close faster.</p>
+    <a href="audit.html" class="btn-tier btn-tier-2" style="display:block; text-align:center;">Secure My Authority Engine →</a>
+    <span class="modal-dismiss" onclick="closeModal('modal-how-2')">Got it, close this</span>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-how-3" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-how-3')" aria-label="Close">×</button>
+    <h3>The Autonomous System — How It Works</h3>
+    <p>A complete automated revenue infrastructure. 5–7 page site, legal pages, full CRM integration, automated email follow-up, advanced booking flows. Once live: LinkedIn traffic flows in, leads are nurtured, calls are booked — without you being online.</p>
+    <a href="audit.html" class="btn-tier btn-tier-3" style="display:block; text-align:center;">Reserve My Autonomous Build →</a>
+    <span class="modal-dismiss" onclick="closeModal('modal-how-3')">Got it, close this</span>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-demo" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-demo')" aria-label="Close">×</button>
+    <h3>Let's Build Your Conversion Engine</h3>
+    <p>I design and build websites that do one thing: turn your LinkedIn traffic into revenue. Not a template. A done-for-you asset tailored to your offer, your audience, your goals. Reach out on LinkedIn — we'll see if it's a fit.</p>
+    <a href="https://www.linkedin.com/in/kennetharinze" target="_blank" rel="noopener" class="btn-tier btn-tier-2" style="display:block; text-align:center;">Message Kenneth on LinkedIn →</a>
+    <span class="modal-dismiss" onclick="closeModal('modal-demo')">No thanks, I already have leads</span>
+  </div>
+</div>
+
+<script>
+  /* FLIP CARDS */
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.classList.toggle('flipped'); }
+    });
+  });
+
+  /* MODALS */
+  function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(overlay.id); });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+  });
+
+  /* SCROLL REVEAL */
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  /* ANIMATED COUNTERS */
+  function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.target);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const start = performance.now();
+
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutQuart(progress);
+      const current = target * eased;
+
+      // Format: if target has decimal, show 2 decimals
+      const formatted = target % 1 !== 0 ? current.toFixed(2) : Math.floor(current).toLocaleString();
+      el.textContent = prefix + formatted + suffix;
+
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = prefix + (target % 1 !== 0 ? target.toFixed(2) : target.toLocaleString()) + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.live-num-value[data-target]').forEach(el => counterObs.observe(el));
+
+  /* SMOOTH SCROLL for anchor links */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
+
+

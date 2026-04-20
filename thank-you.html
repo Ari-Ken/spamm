@@ -18,36 +18,27 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:  #0B1F3A;
-      --blue:  #2F80ED;
-      --cyan:  #00D1FF;
-      --dark:  #070A0F;
+      --navy: #0B1F3A;
+      --blue: #2F80ED;
+      --cyan: #00D1FF;
       --white: #FFFFFF;
-      --gray:  #8A9BB0;
-      --card:  #0D1E35;
-      --mid:   #0A1628;
-      --red:   #FF6B6B;
-      --green: #0A7F6D;
-      --yellow:#FFC400;
-      /* New light theme variables */
-      --bg-primary: #FFFFFF;
-      --text-primary: #1A1A1A;
-      --text-secondary: #666666;
-      --text-muted: #999999;
-      --section-bg: #F8F9FA;
-      --card-bg: #FFFFFF;
-      --border-light: #E5E7EB;
+      --off: #F8FAFC;
+      --gray: #E2E8F0;
+      --text: #334155;
+      --radius: 20px;
+      --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--bg-primary);
-      color: var(--text-primary);
+      background: var(--off);
+      color: var(--navy);
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       line-height: 1.7;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
     /* ═══════════════════════════ UTILITIES ═══════════════════════════ */
@@ -132,7 +123,7 @@
     .nav-logo-text {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 22px;
-      color: var(--text-primary);
+      color: var(--navy);
       letter-spacing: 2px;
     }
 
@@ -188,7 +179,7 @@
       font-size: clamp(36px, 5vw, 60px);
       font-weight: 800;
       line-height: 1.05;
-      color: var(--text-primary);
+      color: var(--navy);
       margin-bottom: 20px;
     }
 
@@ -196,7 +187,7 @@
 
     .confirm-sub {
       font-size: 18px;
-      color: var(--text-secondary);
+      color: var(--text);
       line-height: 1.75;
       margin-bottom: 36px;
     }
@@ -223,7 +214,7 @@
       line-height: 1.5;
     }
 
-    .email-check strong { color: var(--text-primary); font-weight: 600; }
+    .email-check strong { color: var(--navy); font-weight: 600; }
 
     .before-open {
       font-family: 'Syne', sans-serif;
@@ -248,11 +239,12 @@
     .confirm-right { }
 
     .author-card {
-      background: var(--card);
-      border: 1px solid rgba(47,128,237,0.2);
+      background: var(--white);
+      border: 1px solid var(--gray);
       border-radius: 8px;
       overflow: hidden;
       position: relative;
+      box-shadow: var(--shadow);
     }
 
     .author-card::before {
@@ -283,11 +275,11 @@
       font-family: 'Syne', sans-serif;
       font-size: 16px;
       font-weight: 700;
-      color: var(--white);
+      color: var(--navy);
       margin-bottom: 3px;
     }
 
-    .ac-meta p { font-size: 13px; color: #fff; }
+    .ac-meta p { font-size: 13px; color: var(--text); }
 
     .ac-body { padding: 0 28px 28px; }
 
@@ -330,9 +322,9 @@
 
     /* ═══════════════════════════ SCORECARD SECTION ═══════════════════════════ */
     #scorecard {
-      background: var(--section-bg);
+      background: var(--white);
       padding: 100px 24px;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--gray);
       position: relative;
     }
 
@@ -357,7 +349,7 @@
       font-family: 'Syne', sans-serif;
       font-size: clamp(28px, 4.5vw, 48px);
       font-weight: 800;
-      color: var(--text-primary);
+      color: var(--navy);
       line-height: 1.1;
       margin-bottom: 16px;
     }
@@ -366,7 +358,7 @@
 
     .score-intro p {
       font-size: 16px;
-      color: var(--text-secondary);
+      color: var(--text);
       line-height: 1.75;
     }
 
@@ -460,7 +452,7 @@
     .tier-high .tier-label { color: rgba(0,209,255,0.8); }
     .tier-high .tier-body  { background: rgba(0,209,255,0.05); border: 1px solid rgba(0,209,255,0.2); border-left: none; }
     .tier-high .tier-body h3 { color: #0891B2; }
-    .tier-high .tier-body p  { color: var(--text-secondary); }
+    .tier-high .tier-body p  { color: var(--text); }
 
     .tier-high-list {
       list-style: none;
@@ -474,7 +466,7 @@
       gap: 10px;
       margin-bottom: 8px;
       font-size: 15px;
-      color: var(--text-secondary);
+      color: var(--text);
     }
 
     .tier-high-list li::before {
@@ -486,12 +478,12 @@
 
     /* ═══════════════════════════ DESIRE AMPLIFICATION ═══════════════════════════ */
     #desire {
-      background: var(--section-bg);
+      background: var(--off);
       padding: 100px 24px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--gray);
     }
 
     #desire::before {
@@ -575,7 +567,7 @@
       font-family: 'Syne', sans-serif;
       font-size: clamp(28px, 4vw, 44px);
       font-weight: 800;
-      color: var(--text-primary);
+      color: var(--navy);
       line-height: 1.15;
       margin-bottom: 20px;
     }
@@ -584,7 +576,7 @@
 
     .action-content p {
       font-size: 16px;
-      color: var(--text-secondary);
+      color: var(--text);
       line-height: 1.8;
       margin-bottom: 16px;
     }
@@ -694,7 +686,7 @@
 
     /* ═══════════════════════════ FOOTER ═══════════════════════════ */
     footer {
-      background: var(--dark);
+      background: var(--navy);
       padding: 48px 24px;
       text-align: center;
       border-top: 1px solid rgba(47,128,237,0.12);
@@ -823,6 +815,8 @@
 </head>
 <body>
 
+<body>
+
   <!-- ═══════════════ NAV ═══════════════ -->
   <nav>
     <a href="index.html" class="nav-logo">
@@ -832,240 +826,58 @@
     <span style="font-family:'Syne',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--green);">✓ Framework Sent</span>
   </nav>
 
-  <!-- ═══════════════ CONFIRMATION HERO ═══════════════ -->
-  <section id="confirm">
-    <div class="confirm-inner">
+  <!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+  <main style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 80px 20px 40px;">
+    <div class="container--tight" style="text-align: center;">
 
-      <!-- LEFT -->
-      <div class="confirm-left">
-        <div class="confirm-badge">
-          <span class="tag">✓ &nbsp;You're In</span>
-        </div>
+      <!-- Headline -->
+      <h1 style="font-family: 'Syne', sans-serif; font-size: clamp(32px, 5vw, 48px); font-weight: 800; color: var(--text-primary); margin-bottom: 16px; line-height: 1.1;">
+        Framework Sent
+      </h1>
 
-        <h1 class="confirm-h1">
-          Your SPAMM Framework<br>Is <span class="hl">On The Way</span>
-        </h1>
+      <!-- Subheadline -->
+      <p style="font-size: 18px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 60px; max-width: 500px; margin-left: auto; margin-right: auto;">
+        Check your inbox. Subject: "Your SPAMM Framework Is Here."
+      </p>
 
-        <p class="confirm-sub">
-          Check your inbox — it's already sent. Give it 2–3 minutes and check your spam folder if needed.
+      <!-- Revenue Engine Section -->
+      <div style="background: var(--section-bg); border-radius: 12px; padding: 48px 32px; margin-bottom: 40px; border: 1px solid var(--border-light);">
+        <div class="section-label" style="justify-content: center; margin-bottom: 24px;">Introducing The Revenue Engine</div>
+
+        <p style="font-size: 18px; color: var(--text-primary); line-height: 1.7; margin-bottom: 32px; font-weight: 500;">
+          A daily newsletter for founders, consultants, and coaches who want more than attention.
         </p>
 
-        <div class="email-check">
-          <span class="email-check-icon">📬</span>
-          <p><strong>Subject line to look for:</strong><br>"Your SPAMM Framework Is Here" from Kenneth Arinze</p>
-        </div>
+        <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 32px;">
+          Each morning, one curated insight on how the top 1% build 6–7 figure businesses that run without them. Pulled from real operators, private interviews, and hundreds of hours of deep dives.
+        </p>
 
-        <div class="before-open">Before you open it — understand this:</div>
+        <!-- Newsletter Link -->
+        <a href="newsletter.html" style="display: inline-block; padding: 14px 24px; background: var(--blue); color: var(--white); border-radius: 8px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; text-decoration: none; transition: background 0.2s;">
+          Get Free Access →
+        </a>
 
-        <div class="confirm-note">
-          This system only works if you apply it correctly. Most people will skim it. A smaller group will read it. An even smaller group will actually score themselves and act on what they find.<br><br>
-          You're about to find out which group you're in.
-        </div>
+        <p style="font-size: 14px; color: var(--text-muted); font-style: italic; margin-top: 20px;">
+          Already subscribed? You'll receive tomorrow's issue.
+        </p>
       </div>
 
-      <!-- RIGHT — Author Card -->
-      <div class="confirm-right">
-        <div class="author-card">
-          <div class="ac-top">
-            <img src="my-photo.png" alt="Kenneth Arinze" class="ac-photo">
-            <div class="ac-meta">
-              <h3>Kenneth Arinze</h3>
-              <p>LinkedIn Conversion Strategist</p>
-            </div>
-          </div>
-          <div class="ac-body">
-            <p class="ac-message">
-              "Once you've gone through the framework and scored yourself — reach out directly. If you score high, I want to talk to you. There's a specific opportunity for people who are already close."
-            </p>
-            <a href="https://www.linkedin.com/in/kennetharinze" target="_blank" class="li-btn">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              Message Kenneth on LinkedIn
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ═══════════════ SCORECARD ═══════════════ -->
-  <section id="scorecard">
-    <div class="container">
-      <div class="score-intro">
-        <div class="section-label" style="justify-content:center;">Inside the Framework</div>
-        <h2>Where Do You <span class="hl">Stand Right Now?</span></h2>
-        <p>Inside the framework you just received, you'll score yourself across 5 key dimensions of your system. Here's what each score range means — and what comes next.</p>
-      </div>
-
-      <div class="score-tiers">
-
-        <!-- LOW -->
-        <div class="tier tier-low">
-          <div class="tier-badge">
-            <div class="tier-score">0–24</div>
-            <div class="tier-label">Early Stage</div>
-          </div>
-          <div class="tier-body">
-            <h3>You're Still Building Attention</h3>
-            <p>You're in the foundation stage. The system exists, but it hasn't been built yet. That's not a problem — it's a starting point.</p>
-            <p>Your next move is clarity: lock in your positioning, get consistent with content, and define who you're actually trying to reach. Don't scale yet. Build first.</p>
-          </div>
-        </div>
-
-        <!-- MID -->
-        <div class="tier tier-mid">
-          <div class="tier-badge">
-            <div class="tier-score">25–39</div>
-            <div class="tier-label">Close — With Gaps</div>
-          </div>
-          <div class="tier-body">
-            <h3>You're Close — But Gaps Are Costing You</h3>
-            <p>You have traction. You're generating attention and some leads are coming through. But something isn't connecting, and you feel it every time results are inconsistent.</p>
-            <p>Two or three specific gaps in your system are limiting everything else. Find them using the scorecard. Fix them deliberately. One solved gap at this stage can double your conversion rate.</p>
-          </div>
-        </div>
-
-        <!-- HIGH -->
-        <div class="tier tier-high">
-          <div class="tier-badge">
-            <div class="tier-score">40–50</div>
-            <div class="tier-label">System Ready</div>
-          </div>
-          <div class="tier-body">
-            <h3>This Is Where It Gets Interesting</h3>
-            <p>If you score high — pay close attention. This is the stage most people never reach. And it's where everything changes.</p>
-            <ul class="tier-high-list">
-              <li>You already have attention — people are watching</li>
-              <li>You already have positioning — the right people recognize you</li>
-              <li>You're just missing the conversion layer that makes it permanent</li>
-            </ul>
-            <p>At this stage:</p>
-            <ul class="tier-high-list">
-              <li>Leads become predictable, not random</li>
-              <li>Conversations become clients, not just connections</li>
-              <li>Your system starts compounding — effort builds on itself</li>
-            </ul>
-            <p style="color:var(--cyan); font-family:'Syne',sans-serif; font-weight:700; font-size:16px; margin-top:16px;">
-              Most people will never reach this level. But once you do — everything you've built starts paying dividends.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ═══════════════ DESIRE ═══════════════ -->
-  <section id="desire">
-    <div class="desire-inner">
-      <div class="section-label" style="justify-content:center;">The Reality</div>
-      <div class="desire-quote">
-        Most people read frameworks.<br>
-        Very few <span class="hl">build the system.</span>
-      </div>
-      <p class="desire-sub">
-        The ones who do — they stop guessing. They stop hoping a post goes viral. They stop checking their follower count looking for validation.<br><br>
-        Instead, they watch leads come in. They wake up to messages from qualified people who already understand what they do. They have conversations that start informed and end with contracts.
+      <!-- Filter Line -->
+      <p style="font-size: 16px; color: var(--text-secondary); font-style: italic; border-top: 1px solid var(--border-light); padding-top: 32px; margin-top: 40px;">
+        This is only for those ready to own their revenue. You can close this page.
       </p>
-      <div class="desire-divider"></div>
-      <p style="font-family:'Syne',sans-serif; font-size:18px; font-weight:700; color:var(--text-primary);">
-        That's what a working system feels like.<br>
-        <span style="color:var(--cyan);">And you now have the blueprint to build it.</span>
-      </p>
+
     </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ═══════════════ ACTION ═══════════════ -->
-  <section id="action">
-    <div class="container">
-      <div class="action-grid">
-
-        <div class="action-content">
-          <div class="section-label">Your Next Move</div>
-          <h2>When You're Done<br><span class="hl">Scoring Yourself</span></h2>
-          <p>Go through the framework carefully. Score yourself honestly across each dimension. Then come back here.</p>
-
-          <div class="action-steps">
-            <div class="action-step">
-              <div class="action-step-n">1</div>
-              <div class="action-step-text"><strong>Read the SPAMM Framework</strong> in full — don't skim. Each stage builds on the last.</div>
-            </div>
-            <div class="action-step">
-              <div class="action-step-n">2</div>
-              <div class="action-step-text"><strong>Complete the scorecard</strong> inside. Be honest. Your number tells you exactly where to focus.</div>
-            </div>
-            <div class="action-step">
-              <div class="action-step-n">3</div>
-              <div class="action-step-text"><strong>If you score 25 or above</strong> — message Kenneth directly on LinkedIn with your score.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="action-cta-card">
-          <div class="cta-card-h">Message Your Score</div>
-          <p class="cta-card-sub">
-            If you score high and want to turn your system into a full conversion engine — reach out directly. Include your score and one sentence about where you're currently stuck.
-          </p>
-
-          <a href="https://www.linkedin.com/in/kennetharinze" target="_blank" class="li-btn-large">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            Message Me on LinkedIn
-          </a>
-
-          <p class="skip-note">
-            Some people skip the framework entirely and message immediately.<br>That's fine too — just bring your score.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- ═══════════════ FOOTER ═══════════════ -->
-  <footer>
-    <div class="footer-logo">
-      <img src="spamm-logo.png" alt="SPAMM">
-      <span class="footer-logo-text">SPAMM</span>
-    </div>
-    <p class="footer-text">© 2026 Kenneth Arinze · The SPAMM System</p>
-    <p class="footer-text" style="margin-bottom:20px;">Your information is private. We will never share your data.</p>
-    <a href="index.html" class="back-link">← Want to revisit the framework overview? Back to main page</a>
-  </footer>
-  <div id="spamm-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999;">
-  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:#0b0f1a; padding:30px; border-radius:12px; max-width:400px; text-align:center; color:#fff;">
-    
-    <p style="font-size:16px; margin-bottom:20px;">
-      Have you downloaded the SPAMM system from your inbox yet?
-      Check your email for an extra tip.
+  <footer style="background: var(--dark); padding: 32px 24px; text-align: center; color: #fff; margin-top: auto;">
+    <p style="font-size: 14px; color: rgba(255,255,255,0.75); margin: 0;">
+      © Kenneth Arinze
     </p>
-    
-    <a href="https://drive.google.com/file/d/1guSb4KmZ5cWb8Ky-4yf6CZiAhVWj5VBa/view?usp=drivesdk" target="_blank" 
-   style="display:inline-block; padding:14px 24px; background:#3b82f6; color:#fff; border-radius:10px; text-decoration:none; font-weight:600;">
-  Download SPAMM System
-</a>
+  </footer>
 
-
-    <div style="margin-top:15px;">
-      <button onclick="document.getElementById('spamm-popup').style.display='none'" 
-        style="background:none; border:none; color:#aaa; cursor:pointer;">
-        Close
-      </button>
-    </div>
-
-  </div>
-</div>
-
-<script>
-  setTimeout(function() {
-    document.getElementById('spamm-popup').style.display = 'block';
-  }, 8000); // shows after 8 seconds
-</script>
+</body>
 
 
 </body>

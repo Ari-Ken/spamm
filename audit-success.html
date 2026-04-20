@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Diagnostic Is Being Prepared — SPAMM System</title>
+<meta name="description" content="Your Revenue Leak Diagnostic is being prepared. Check your inbox within 24–48 hours.">
+<meta property="og:image" content="https://spamm.site/assets/audit-logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:title" content="SPAMM System — Turn LinkedIn Attention Into Owned Revenue">
+<meta property="og:description" content="Free audit reveals why your LinkedIn isn't paying you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B1F3A;
+    --blue: #2F80ED;
+    --cyan: #00D1FF;
+    --white: #FFFFFF;
+    --off: #F8FAFC;
+    --gray: #E2E8F0;
+    --text: #334155;
+    --radius: 20px;
+    --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family:'DM Sans',sans-serif; color:var(--navy); background:var(--off); min-height:100vh; line-height:1.6; }
+  .skip-link { position:absolute; top:-40px; left:0; background:var(--blue); color:white; padding:8px 16px; text-decoration:none; z-index:9999; border-radius: 0 0 8px 0; }
+  .skip-link:focus { top:0; }
+  .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+  @media(min-width:768px) { .container { padding:0 40px; } }
+
+  nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--gray); padding:16px 0; }
+  .nav-inner { display:flex; justify-content:space-between; align-items:center; }
+  .nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; color:var(--navy); text-decoration:none; letter-spacing:-0.5px; }
+  .nav-logo span { color:var(--blue); }
+  .nav-back { color:var(--blue); text-decoration:none; font-size:0.88rem; font-weight:500; }
+  .nav-back:hover { text-decoration:underline; }
+
+  h1,h2,h3 { font-family:'Syne',sans-serif; font-weight:800; letter-spacing:-0.5px; line-height:1.15; }
+
+  main { padding: 80px 0; }
+
+  .success-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* CHECKMARK ANIMATION */
+  .check-wrap {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 36px;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 12px 32px rgba(47,128,237,0.35);
+  }
+  @keyframes popIn { from { opacity:0; transform:scale(0.5); } to { opacity:1; transform:scale(1); } }
+  .check-icon { color:white; font-size:2.2rem; font-weight:700; }
+
+  .success-head { text-align:center; margin-bottom:48px; }
+  .success-head h1 { font-size:clamp(1.8rem,3.5vw,2.6rem); margin-bottom:14px; }
+  .success-head p { color:var(--text); font-size:1.05rem; line-height:1.7; max-width:520px; margin:0 auto; }
+
+  /* TIMELINE */
+  .timeline { margin-bottom: 48px; }
+  .timeline-item {
+    display:flex; gap:20px; align-items:flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--gray);
+    animation: fadeUp 0.5s ease both;
+  }
+  .timeline-item:first-child { border-top: 1px solid var(--gray); }
+  .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+  .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+  .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
+
+  .timeline-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(47,128,237,0.1); color: var(--blue);
+    font-family:'Syne',sans-serif; font-weight:700; font-size:0.88rem;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .timeline-content h3 { font-size:0.95rem; margin-bottom:4px; }
+  .timeline-content p { font-size:0.88rem; color:var(--text); line-height:1.6; }
+
+  /* GAP SECTION */
+  .gap-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 32px;
+    border-left: 4px solid var(--cyan);
+    animation: fadeUp 0.5s ease 0.4s both;
+  }
+  @media(max-width:480px) { .gap-card { padding:28px 20px; } }
+  .gap-label { font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--cyan); margin-bottom:10px; }
+  .gap-card h2 { font-size:1.4rem; margin-bottom:14px; }
+  .gap-card p { color:var(--text); font-size:0.95rem; line-height:1.75; margin-bottom:12px; }
+  .gap-card .highlight { font-family:'Syne',sans-serif; font-weight:700; color:var(--navy); font-size:1rem; }
+
+  /* ROADMAP PREVIEW */
+  .roadmap-card {
+    background: linear-gradient(135deg, var(--navy) 0%, #112d52 100%);
+    border-radius: var(--radius);
+    padding: 40px 36px;
+    color:white;
+    text-align:center;
+    animation: fadeUp 0.5s ease 0.5s both;
+    position:relative;
+    overflow:hidden;
+  }
+  .roadmap-card::before {
+    content:''; position:absolute; top:-60px; right:-60px;
+    width:200px; height:200px;
+    background: radial-gradient(circle, rgba(0,209,255,0.15), transparent 70%);
+  }
+  @media(max-width:480px) { .roadmap-card { padding:32px 24px; } }
+  .roadmap-badge {
+    display:inline-block; background:rgba(0,209,255,0.15); border:1px solid rgba(0,209,255,0.3);
+    color:var(--cyan); font-size:0.75rem; font-weight:600; letter-spacing:0.1em;
+    text-transform:uppercase; padding:5px 14px; border-radius:40px; margin-bottom:16px;
+  }
+  .roadmap-card h2 { color:white; font-size:clamp(1.3rem,3vw,1.8rem); margin-bottom:14px; }
+  .roadmap-card p { color:rgba(255,255,255,0.75); font-size:0.95rem; line-height:1.7; margin-bottom:28px; }
+
+  .btn-primary {
+    display:inline-block; background:var(--blue); color:white;
+    padding:14px 32px; border-radius:40px; text-decoration:none;
+    font-weight:500; font-size:1rem; transition:all 0.25s;
+    box-shadow:0 4px 14px rgba(47,128,237,0.3); border:none; cursor:pointer;
+    font-family:'DM Sans',sans-serif;
+  }
+  .btn-primary:hover { background:#1a56c9; transform:scale(1.02); }
+  .btn-cyan { background:var(--cyan); color:var(--navy); font-weight:700; box-shadow:0 4px 14px rgba(0,209,255,0.3); }
+  .btn-cyan:hover { background:#00b8e0; }
+
+  .trust-note { font-size:0.78rem; color:rgba(255,255,255,0.45); margin-top:16px; }
+
+  /* FOOTER */
+  footer { background:var(--navy); color:white; padding:0; overflow:hidden; }
+  .footer-scroll-bar { background:rgba(255,255,255,0.06); padding:14px 0; overflow:hidden; white-space:nowrap; border-bottom:1px solid rgba(255,255,255,0.08); }
+  .footer-scroll-inner { display:inline-flex; gap:0; animation:scrollLeft 20s linear infinite; width:max-content; }
+  @keyframes scrollLeft { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+  .footer-scroll-item { font-size:0.78rem; font-weight:500; letter-spacing:0.08em; color:rgba(255,255,255,0.5); padding:0 28px; }
+  .footer-scroll-item span { color:var(--cyan); margin-left:12px; }
+  .footer-bottom { padding:28px 0; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px; }
+  .footer-links { display:flex; flex-wrap:wrap; gap:24px; }
+  .footer-links a { color:var(--navy); text-decoration:none; font-size:0.85rem; transition:color 0.2s; font-weight:500; }
+  .footer-links a:hover { color:#1a1a1a; }
+  .footer-attr { font-size:0.8rem; color:rgba(255,255,255,0.35); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="audit-home.html" class="nav-logo">SPAMM<span>.</span></a>
+    <a href="audit-home.html" class="nav-back">← Back to Home</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="success-wrap">
+
+    <div class="success-head">
+      <div class="check-wrap" aria-hidden="true">
+        <div class="check-icon">✓</div>
+      </div>
+      <h1>Your Diagnostic Is Being Prepared</h1>
+      <p>It will arrive in your inbox within 24–48 hours. Set a reminder now.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-num">1</div>
+        <div class="timeline-content">
+          <h3>Check your inbox</h3>
+          <p>Your personalized Revenue Leak Diagnostic will arrive within 24–48 hours. Add kenneth@spamm.site to your contacts so it doesn't land in spam.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-num">2</div>
+        <div class="timeline-content">
+          <h3>Review your Revenue Readiness Score</h3>
+          <p>The report shows you exactly where your current setup is leaking potential revenue — with specific, actionable insight you can use immediately.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-num">3</div>
+        <div class="timeline-content">
+          <h3>Decide your next move</h3>
+          <p>Implement the roadmap yourself, or discuss a done-for-you build. The report will make the path clear.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gap-card">
+      <div class="gap-label">The Gap</div>
+      <h2>The report will show you exactly where your revenue is leaking.</h2>
+      <p>Most people stop there.</p>
+      <p>They see the problem and return to the same habits. The gap between knowing and fixing stays wide open.</p>
+      <p class="highlight">If you're serious about closing that gap, there's a faster way.</p>
+    </div>
+
+    <div class="roadmap-card">
+      <div class="roadmap-badge">The Next Step</div>
+      <h2>The Complete 90-Day Revenue Roadmap</h2>
+      <p>I've mapped the complete system that turns LinkedIn attention into predictable revenue. It includes the exact execution plan the top 1% use to go from content to cash. No fluff. No theory. Just the sequence that works.</p>
+      <a href="preview.html" class="btn-primary btn-cyan">Preview the $999 Revenue Roadmap →</a>
+      <p class="trust-note">The diagnostic is yours free. The preview is there if you want to see what fixing the leak actually looks like.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-scroll-bar">
+    <div class="footer-scroll-inner">
+      <span class="footer-scroll-item">For Founders <span>·</span></span>
+      <span class="footer-scroll-item">For Consultants <span>·</span></span>
+      <span class="footer-scroll-item">For Coaches <span>·</span></span>
+      <span class="footer-scroll-item">For B2B Operators <span>·</span></span>
+      <span class="footer-scroll-item">For Service Professionals <span>·</span></span>
+      <span class="footer-scroll-item">For Founders <span>·</span></span>
+      <span class="footer-scroll-item">For Consultants <span>·</span></span>
+      <span class="footer-scroll-item">For Coaches <span>·</span></span>
+      <span class="footer-scroll-item">For B2B Operators <span>·</span></span>
+      <span class="footer-scroll-item">For Service Professionals <span>·</span></span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <nav class="footer-links">
+      <a href="audit-home.html#hero">About</a>
+      <a href="audit.html">Free Audit</a>
+      <a href="audit-home.html#top-1-percent">Top 1%</a>
+      <a href="audit-home.html#faq">FAQ</a>
+    </nav>
+    <div class="footer-attr">SPAMM System — Turn LinkedIn Attention Into Owned Revenue</div>
+  </div>
+</footer>
+
+</body>
+</html>
+
